@@ -1,0 +1,16 @@
+<div class="bl-tabs bl-tabs-top {{tabtype}}" tab-name="{{tabname}}">
+	<div class="bl-tabs-bar">
+		<div class="bl-tabs-nav-container">
+			<div class="bl-tabs-nav-wrap">
+				<div class="bl-tabs-nav-scroll">
+					<div class="bl-tabs-nav bl-tabs-nav-animated">
+						<div class="bl-tabs-ink-bar bl-tabs-ink-bar-animated"></div>
+						{{#each name}}
+							<div class="{{#if active}} bl-tabs-tab-active {{/if}} bl-tabs-tab">{{{txt}}}</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

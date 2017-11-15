@@ -1,0 +1,78 @@
+{
+	"list1":[{
+		"listname": "start",
+		"listtitle": "开始使用"
+	},
+	{
+		"listname": "journal",
+		"listtitle": "更新日志"
+	}],
+	"list2":[
+	{
+		"listname": "button",
+		"listtitle": "按钮"
+	},
+	{
+		"listname": "select",
+		"listtitle": "选择框"
+	},
+	{
+		"listname": "radio",
+		"listtitle": "单选"
+	},
+	{
+		"listname": "checkbox",
+		"listtitle": "复选框"
+	},
+	{
+		"listname": "file",
+		"listtitle": "上传"
+	},
+	{
+		"listname": "input",
+		"listtitle": "输入框"
+	},
+	{
+		"listname": "textarea",
+		"listtitle": "多行文本输入框"
+	}],
+	"list3":[{
+		"listname": "alert",
+		"listtitle": "信息提示"
+	},
+	{
+		"listname": "crumbs",
+		"listtitle": "面包屑"
+	},
+	{
+		"listname": "page",
+		"listtitle": "分页"
+	},
+	{
+		"listname": "date",
+		"listtitle": "时间控件"
+	},
+	{
+		"listname": "form",
+		"listtitle": "form表单"
+	},
+	{
+		"listname": "footer",
+		"listtitle": "页脚"
+	},
+	{
+		"listname": "show",
+		"listtitle": "弹框"
+	},
+	{
+		"listname": "sider",
+		"listtitle": "侧边栏"
+	},
+	{
+		"listname": "transfer",
+		"listtitle": "穿梭框"
+	},{
+		"listname": "tab",
+		"listtitle": "列表"
+	}]
+}

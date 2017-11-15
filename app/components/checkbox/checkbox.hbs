@@ -1,0 +1,9 @@
+<label class="bl-checkbox-wrapper {{class}}">
+	<span class="bl-checkbox ">
+		<input type="checkbox" class="bl-checkbox-input" 
+		{{#if disabled}}
+		disabled
+		{{/if}} value="on" name="{{name}}" id="{{id}}" {{checked}}>
+		<span class="bl-checkbox-inner"></span>
+	</span><span>{{text}}</span>
+</label>

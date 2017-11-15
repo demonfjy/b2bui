@@ -1,0 +1,19 @@
+{
+	"style" : ["input"],
+	"require": "js/assembly/file/input",
+	"input1": {
+		"type" : "text",
+		"id" : "form-company",
+		"name" : "form-txt",
+		"class" : "bl-input-lg",
+		"placeholder" : "请输入属性内容"
+	},
+	"input2" : {
+		"iconinput" : "1",
+		"id" : "",
+		"class" : "",
+		"placeholder" : "请输入属性内容",
+		"iconclass" : "",
+		"name" : ["1","2","3","4"]
+	}
+}

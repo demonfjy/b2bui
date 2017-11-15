@@ -1,0 +1,2 @@
+require(['../../sider/sider'], function() {
+});

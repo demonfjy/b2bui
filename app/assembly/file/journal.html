@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+
+<div class="site-content">
+    <h1 class="site-h1">更新日志</h1>
+    <ul class="layui-timeline">
+        {{#each journal}}
+        <li class="layui-timeline-item">
+            <input type="hidden" value="作者：{{ author }}">
+            <a name="{{ edition }}"></a>
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">
+                    <h2>{{ edition }}</h2>
+                    <span class="layui-badge-rim">{{ time }}</span>
+                </div>
+                <blockquote class="layui-elem-quote">
+                    {{ explain }}
+                </blockquote>
+                <ul>
+                    {{#each listcontent}}
+                    <li>
+                        {{#if content}}
+                        <h3>{{ contenttitle }}</h3>
+                        <ul>
+                            {{#each contentinfo}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                        {{else}}
+                        	{{this}}
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </li>
+        {{/each}}
+	</ul>
+	<div class="layui-elem-quote">
+		<p>b2b - 用心与你沟通</p>
+	</div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

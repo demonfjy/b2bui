@@ -1,0 +1,39 @@
+{
+	"style" : ["transfer"],
+	"require" : "js/assembly/file/transfer",
+	"transfer1" : {
+		"checkbox1" :{
+			"class" :"",
+			"name":"",
+			"id":"",
+			"text":"11"
+		},
+		"name1":"1",
+		"input":{
+			"type":"text",
+			"id":"",
+			"name":"",
+			"class":"",
+			"placeholder":"1"
+		},
+		"check":{
+			"class" :"",
+			"name":"",
+			"id":"",
+			"text":"11"
+		},
+		"check1":{
+			"class" :"",
+			"name":"",
+			"id":"",
+			"text":"11"
+		},
+		"checkbox2":{
+			"class" :"",
+			"name":"",
+			"id":"",
+			"text":"11"
+		},
+		"name2":"1"
+	}
+}

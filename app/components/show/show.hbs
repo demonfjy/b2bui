@@ -1,0 +1,26 @@
+{{#if infoshow}}
+	<div data-reactroot="" class="show-info {{class}}">
+		<div class="bl-modal-mask1"></div>
+		<div tabindex="-1" class="bl-modal-wrap " role="dialog">
+			<div role="document" class="bl-modal bl-confirm bl-confirm-confirm {{style}}">
+				<div class="bl-modal-content">
+					<button aria-label="Close" class="bl-modal-close"><span class="bl-modal-close-x"></span></button>
+					<div class="bl-modal-body">
+						<div class="bl-modal-body-wrapper">
+							<div class="bl-confirm-body">
+								<i class="blicon blicon-question-circle"></i>
+								<span class="bl-modal-title">{{name}}</span>
+								<div class="bl-main-modal-content">{{text}}</div>
+							</div>
+							<div class="bl-modal-btns">
+								{{#each button}}
+									{{> button/button}}
+								{{/each}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{{/if}}

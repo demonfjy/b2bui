@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css"> {{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css"> {{/each}}
+<div class="site-content">
+    <h1 class="site-h1">单选 radio</h1>
+    <blockquote class="layui-elem-quote">单选 radio</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#radio1}} {{> radio/radio}} {{/radio1}} {{#radio2}} {{> radio/radio}} {{/radio2}}</div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;label class=&quot;bl-radio-wrapper <span>{</span>{class}}&quot;&gt;<br>    &lt;span class=&quot;bl-radio &quot;&gt;<br>        &lt;input type=&quot;radio&quot; id=&quot;<span>{</span>{id}}&quot; name=&quot;<span>{</span>{name}}&quot; class=&quot;bl-radio-input&quot; <span>{</span>{#if disabled}}  disabled <span>{</span>{/if}} value=&quot;on&quot; <span>{</span>{checked}}&gt;<br>        &lt;span class=&quot;bl-radio-inner&quot;&gt;&lt;/span&gt;<br>    &lt;/span&gt;
+    &lt;span&gt;{<span>{</span>{text}}}&lt;/span&gt;<br>&lt;/label&gt;</div></pre>
+        <p><span>{</span>{class}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{id}}定义按钮id。<span>{</span>{#if disabled}}判断时候可点击。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;tobe/components/radio/radio&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#radio1}}<br>    <span>{</span>{&gt; radio/radio}}<br><span>{</span>{/radio1}}
+<span>{</span>{#radio2}}<br>    <span>{</span>{&gt; radio/radio}}<br><span>{</span>{/radio2}}</div></pre>
+        <p><span>{</span>{#radio1}}、<span>{</span>{#radio2}}为json数据名称，可自行定义，<span>{</span>{&gt; radio/radio}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/radio.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/radio.js&quot;<br>    },<br>    &quot;radio1&quot;: {<br>        &quot;class&quot;: &quot;&quot;,<br>        &quot;id&quot;: &quot;&quot;,<br>        &quot;name&quot;: &quot;mc1&quot;,<br>        &quot;text&quot;: &quot;11&quot;<br>    },<br>    &quot;radio2&quot;: {<br>        &quot;class&quot;: &quot;&quot;,<br>        &quot;id&quot;: &quot;&quot;,<br>        &quot;name&quot;: &quot;mc1&quot;,<br>        &quot;text&quot;: &quot;22&quot;<br>    }<br>}</div></pre>
+        <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“radio1”、“radio2”组件调用数组名称一致。</p>
+    </div>
+    <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">js调用</h3><div>require(['radiot/radio'], function() {});</div></pre>
+      <p>此处调用的是组件效果的js，如果不调用组件js不会产生效果。</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="../../css/fileleft.css">
+<div class="site-tree">
+    <ul class="layui-tree" id="din">
+        <li><h2>基础说明</h2></li>
+        {{#each list1}}
+        <li class="site-tree-noicon ">
+            <a href="{{ listname }}.html" target="m2" id="{{ listname }}">
+                <cite>{{ listtitle }}</cite>
+                <em>{{ listname }}</em>
+            </a>
+        </li>
+        {{/each}}
+        <li><h2>页面元素</h2></li>
+        {{#each list2}}
+        <li class="site-tree-noicon ">
+            <a href="{{ listname }}.html" target="m2" id="{{ listname }}">
+                <cite>{{ listtitle }}</cite>
+                <em>{{ listname }}</em>
+            </a>
+        </li>
+        {{/each}}
+        <li><h2>内置模块</h2></li>
+        {{#each list3}}
+        <li class="site-tree-noicon">
+            <a href="{{ listname }}.html" target="m2" id="{{ listname }}">
+                <cite>{{ listtitle }}</cite>
+                <em>{{ listname }}</em>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

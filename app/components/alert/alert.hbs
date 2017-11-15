@@ -1,0 +1,13 @@
+<div class="bl-alert {{class}}">
+	<i class="blicon {{icon}} bl-alert-icon"></i>
+	<span class="bl-alert-message">{{name}}</span>
+	<span class="bl-alert-description">{{message}}</span>
+	<a class="bl-alert-close-icon">
+		{{#if close.close1}}
+			<i class="blicon blicon-error bl-alert-close"></i>
+		{{/if}}
+		{{#if close.close2}}
+			<a class="bl-alert-close-icon">不再提醒</a>
+		{{/if}}
+	</a>
+</div>

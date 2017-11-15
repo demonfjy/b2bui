@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">面包屑 crumbs</h1>
+    <blockquote class="layui-elem-quote">checkbox 面包屑，一般用来放置页面路径或者页面位置。</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#crumbs1}}
+			{{> crumbs/crumbs}}
+		{{/crumbs1}}
+  </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;div class=&quot;bl-crumbs&quot;&gt;<br>    <span>{</span>{#each title}}<br>        &lt;span class=&quot;bl-crumbs-title&quot;&gt;&lt;a href=&quot;&quot; title=&quot;<span>{</span>{this}}&quot;&gt;<span>{</span>{this}}&lt;/a&gt;&lt;/span&gt;<br>    <span>{</span>{/each}}<br>    <span>{</span>{#each name}}<br>        &lt;span class=&quot;bl-crumbs-name&quot;&gt;&lt;a href=&quot;&quot; title=&quot;<span>{</span>{this}}&quot;&gt;<span>{</span>{this}}&lt;/a&gt;&lt;/span&gt;<br>    <span>{</span>{/each}}<br>&lt;/div&gt;</div></pre>
+        <p>title、name路径与页面名称。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;tobe/components/crumbs/crumbs&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+  <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#crumbs1}}<br>    <span>{</span>{&gt; crumbs/crumbs}}<br><span>{</span>{/crumbs1}}</div></pre>
+        <p><span>{</span>{#crumbs1}}为json数据名称，可自行定义。<span>{</span>{&gt; crumbs/crumbs}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/crumbs.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/crumbs.js&quot;<br>    },<br>    &quot;crumbs1&quot;:{<br>        &quot;title&quot;: [&quot;用户注册&quot;,&quot;用户注册&quot;], <br>        &quot;name&quot;: [&quot;用户注册&quot;,&quot;用户注册&quot;]<br>    }<br>}</div></pre>
+      <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“crumbs1”与组件调用数组名称一致。</p>
+    </div>
+    
+  <div class="layui-elem-quote">
+      <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

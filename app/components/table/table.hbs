@@ -1,0 +1,16 @@
+<div class="bl-table {{style}}">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    	{{#each th}}
+      <th width="{{width}}" align="{{align}}">{{{text}}}</th>
+      {{/each}}
+    </tr>
+    {{#each tr}}
+    <tr>
+    	{{#each td}}
+      <td align="{{align}}">{{{text}}}</td>
+      {{/each}}
+    </tr>
+    {{/each}}
+  </table>
+</div>

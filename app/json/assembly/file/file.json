@@ -1,0 +1,19 @@
+{
+	"style" : ["file"],
+	"require": "js/assembly/file/file",
+    "file1": {
+		"class": "",
+		"id": "",
+		"name": "",
+		"text": "相关附件"
+	},
+    "file2": {
+		"class": "",
+		"id": "",
+		"name": "",
+		"text": "相关附件",
+		"img": {
+			"src": "1.jpg"
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"style" : ["tab"],
+	"require" : "js/assembly/file/tab",
+	"tab1" : {
+		"tabtype" : "claa1",
+		"tabname" : "aaa",
+		"name" : [{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "1",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		},
+		{
+			"active" : "",
+			"txt": "1"
+		}]
+	}
+}

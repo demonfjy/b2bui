@@ -1,0 +1,450 @@
+{
+    "style": ["form"],
+    "require": "js/assembly/file/form",
+    "form1":
+    {
+        "form": [
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "属性内容",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "input":
+            {
+                "type": "text",
+                "id": "form-company",
+                "name": "form-txt",
+                "class": "bl-input-lg",
+                "placeholder": "请输入属性内容",
+                "style": "bl-col-xs-12 bl-col-sm-12"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "属性内容",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "input":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "iconinput": "c1",
+                "id": "",
+                "class": "",
+                "placeholder": "请输入属性内容",
+                "iconclass": "11",
+                "name": ["1", "2", "3", "4"]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "网址",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "httpinput":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "class": "bl-input-lg",
+                "placeholder": "请输入您的网址",
+                "id": "",
+                "endtext": ".com"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "验证码",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "input":
+            {
+                "type": "text",
+                "id": "form-company",
+                "name": "form-txt",
+                "class": "bl-input-lg",
+                "placeholder": "请输入验证码",
+                "style": "bl-col-xs-9 bl-col-sm-9"
+            },
+            "img":
+            {
+                "src": "1.jpg"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "备注",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "textarea":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "height": "4",
+                "class": "",
+                "id": "",
+                "disabled": "",
+                "placeholder": "请输入备注"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "时间",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "date":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "id": "ticket-date",
+                "name": "时间",
+                "class": "bl-input-lg",
+                "placeholder": "请选择时间"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "时间段",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "date":
+            {
+                "sptype": "1",
+                "sptext": "至",
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "width": "180",
+                "date1":
+                {
+                    "id": "ticket-startdate",
+                    "name": "form-date",
+                    "class": "bl-input-lg",
+                    "placeholder": "开始时间"
+                },
+                "date2":
+                {
+                    "id": "ticket-enddate",
+                    "name": "form-date",
+                    "class": "bl-input-lg",
+                    "placeholder": "结束时间"
+                }
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "下拉选择",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "select":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "normaltype": "1",
+                "class": "",
+                "id": "",
+                "placeholder": "请选择",
+                "name": ["1", "2", "3"]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "下拉选择",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "select":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "linktype": "1",
+                "class": "",
+                "id": "",
+                "placeholder": "请选择",
+                "namelist": [
+                {
+                    "display": "display:block",
+                    "name": [
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "1"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "2"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "3"
+                    }]
+                },
+                {
+                    "display": "display:none",
+                    "name": [
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "1"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "2"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "3"
+                    }]
+                },
+                {
+                    "display": "display:none",
+                    "name": [
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "1"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "2"
+                    },
+                    {
+                        "class": "",
+                        "name": "",
+                        "id": "",
+                        "text": "3"
+                    }]
+                }]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "下拉选择",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "select":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "multitype": "1",
+                "class": "",
+                "id": "",
+                "placeholder": "请选择",
+                "name": [
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "3"
+                },
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "3"
+                },
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "3"
+                }]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "下拉选择",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "select":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "eachlist": "1",
+                "eachslect": [
+                {
+                    "class": "bl-col-xs-8 bl-col-sm-8",
+                    "id": "",
+                    "placeholder": "请选择",
+                    "name": ["1", "2", "3"]
+                },
+                {
+                    "class": "bl-col-xs-8 bl-col-sm-8",
+                    "id": "",
+                    "placeholder": "请选择",
+                    "name": ["1", "2", "3"]
+                },
+                {
+                    "class": "bl-col-xs-8 bl-col-sm-8",
+                    "id": "",
+                    "placeholder": "请选择",
+                    "name": ["1", "2", "3"]
+                }]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "多选",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "checkbox":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "list": [
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "1"
+                },
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "2"
+                },
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "3"
+                },
+                {
+                    "class": "",
+                    "name": "",
+                    "id": "",
+                    "text": "4"
+                }],
+                "other": "我是自定义"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "单选",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "radio":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "list": [
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "1"
+                },
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "1"
+                },
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "1"
+                },
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "1"
+                }]
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "上传",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "file":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "file": [
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "相关附件"
+                },
+                {
+                    "class": "",
+                    "id": "",
+                    "name": "",
+                    "text": "相关附件",
+                    "img":
+                    {
+                        "src": "1.jpg"
+                    }
+                }],
+                "info": "上传标准说明"
+            }
+        },
+        {
+            "label":
+            {
+                "id": "form-company",
+                "class": "",
+                "name": "按钮",
+                "style": "bl-col-xs-8 bl-col-sm-8"
+            },
+            "buttonline":
+            {
+                "style": "bl-col-xs-12 bl-col-sm-12",
+                "button": [
+                {
+                    "class": "bl-btn-primary bl-btn-lg",
+                    "name": "登录"
+                },
+                {
+                    "class": "bl-btn-primary bl-btn-lg",
+                    "name": "登录"
+                }]
+            }
+        }]
+    }
+}

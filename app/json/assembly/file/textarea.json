@@ -1,0 +1,10 @@
+{
+	"style" : ["textarea"],
+	"require" : "js/assembly/file/textarea",
+	"textarea1" : {
+		"height" : "4",
+		"class" : "",
+		"id" : "",
+		"placeholder" : "输入备注"
+	}
+}

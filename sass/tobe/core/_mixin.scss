@@ -1,0 +1,144 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// mixin scss
+// 包括常用的mixin，%及@function
+// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
+// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段
+// @function，返回一个值，用于调用
+//-----------------------------------------------------
+
+// mixin & %
+// 既定义了mixin也定义了%，根据需求使用@include或@extend调用
+//-----------------------------------------------------
+
+@mixin clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+// Compatibility for browsers.
+
+// rotate for ie8 and blow
+@mixin ie-rotate($rotation) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
+}
+
+// rotate for ie8 and blow
+// degrees unit
+@mixin ie-rotate-via-degrees($degrees) {
+  /* IE6-IE8 */
+  $radians: parseInt("#{$degrees}") * 2 / 360;
+  $costheta: cos("#{$radians}");
+  $sintheta: sin("#{$radians}");
+  $negsintheta: "#{$sintheta}" * -1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{$costheta}, M12=#{$negsintheta}, M21=#{$sintheta}, M22=#{$costheta})";
+  zoom: 1;
+
+  :root & {
+    filter: none;
+  }
+}
+
+// support rotate for all browsers
+@mixin cross-rotate($degrees) {
+  @include rotate($degrees);
+  @include ie-rotate-via-degrees($degrees);
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-placeholder-color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+//motion
+@mixin motion-common($duration: $animation-duration-base) {
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+@mixin motion-common-leave($duration: $animation-duration-base) {
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+@mixin make-motion($className, $keyframeName, $duration: $animation-duration-base) {
+  .#{$className}-enter,
+  .#{$className}-appear {
+    @include motion-common($duration);
+    animation-play-state: paused;
+  }
+  .#{$className}-leave {
+    @include motion-common-leave($duration);
+    animation-play-state: paused;
+  }
+  .#{$className}-enter.#{$className}-enter-active,
+  .#{$className}-appear.#{$className}-appear-active {
+    animation-name: "#{$keyframeName}In";
+    animation-play-state: running;
+  }
+  .#{$className}-leave.#{$className}-leave-active {
+    animation-name: "#{$keyframeName}Out";
+    animation-play-state: running;
+  }
+}
+//opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: "alpha(opacity=#{$opacity-ie})";
+}
+//size
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size,$size);
+}
+@mixin iconfont-mixin() {
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:before {
+    display: block;
+    font-family: "bl-font" !important;
+  }
+}
+
+@mixin iconfont-font($content) {
+  font-family: 'bl-font';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: $content;
+}
+
+

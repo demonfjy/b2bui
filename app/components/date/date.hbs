@@ -1,0 +1,31 @@
+{{#if sptype}}
+	<span class="bl-calendar-picker">
+		<span class="bl-input-affix-wrapper" style="width:{{width}}px;">
+			<input readonly type="text" value="" id="{{date1.id}}" name="{{date1.name}}" class="bl-calendar-picker-input bl-input {{date1.class}}" 
+			{{#if date1.disabled}}
+			disabled
+			{{/if}} placeholder="{{date1.placeholder}}">
+			<span class="bl-input-suffix"><i class="blicon blicon-calendar bl-input-search-icon"></i></span>
+		</span>
+	</span>
+	<span class="datetxt">{{{sptext}}}</span>
+	<span class="bl-calendar-picker">
+		<span class="bl-input-affix-wrapper" style="width:{{width}}px;">
+			<input readonly type="text" value="" id="{{date2.id}}" name="{{date2.name}}" class="bl-calendar-picker-input bl-input {{date2.class}}" 
+			{{#if date2.disabled}}
+			disabled
+			{{/if}} placeholder="{{date2.placeholder}}">
+			<span class="bl-input-suffix"><i class="blicon blicon-calendar bl-input-search-icon"></i></span>
+		</span>
+	</span>
+{{else}}
+	<span class="bl-calendar-picker">
+		<span class="bl-input-affix-wrapper">
+			<input readonly type="text" value="" id="{{id}}" name="{{name}}" class="bl-calendar-picker-input bl-input {{class}}" 
+			{{#if disabled}}
+			disabled
+			{{/if}} placeholder="{{placeholder}}">
+			<span class="bl-input-suffix"><i class="blicon blicon-calendar bl-input-search-icon"></i></span>
+		</span>
+	</span>
+{{/if}}

@@ -1,0 +1,21 @@
+{
+	"style" : ["show"],
+	"require": "js/assembly/file/show",
+	"show1": {
+		"infoshow":"1",
+		"class":"show-main",
+		"style":"w415",
+		"name":"确认要取消申请吗？",
+		"text":"确定取消后该申请将会立即作废。",
+		"button":[{
+			"class":"bl-btn-lg",
+			"id":"cancel",
+			"name":"取消"
+		},
+		{
+			"class":"bl-btn-primary bl-btn-lg",
+			"id":"",
+			"name":"确定"
+		}]
+	}
+}

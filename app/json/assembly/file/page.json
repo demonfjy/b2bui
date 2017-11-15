@@ -1,0 +1,7 @@
+{
+	"style" : ["page"],
+	"require": "js/page",
+	"page1" : {
+		"class" : ""
+	}
+}

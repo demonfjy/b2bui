@@ -1,0 +1,70 @@
+{
+	"style" : ["alert"],
+	"require": "js/alert",
+    "alert1":{ 
+      "class": "bl-alert-error", 
+      "icon": "blicon-alert-error", 
+      "name": "用户名或验证码有误，请重试", 
+      "message": "",
+      "close":{
+        "close1":"1"
+      }        
+    },
+    "alert2":{ 
+      "class": "bl-alert-success", 
+      "icon": "blicon-alert-ok", 
+      "name": "成功", 
+      "message": "",
+      "close":{
+        "close2":"1"
+      }        
+    },
+    "alert3":{ 
+      "class": "bl-alert-warning", 
+      "icon": "blicon-alert-warning", 
+      "name": "提示信息", 
+      "message": "",
+      "close":{
+        "close2":"1"
+      }        
+    },
+    "alert4":{ 
+      "class": "bl-alert-info", 
+      "icon": "blicon-alert-warning", 
+      "name": "提示信息", 
+      "message": ""        
+    },
+	"alert5":{ 
+      "class": "bl-alert-error bl-alert-with-description", 
+      "icon": "blicon-alert-error", 
+      "name": "用户名或验证码有误，请重试", 
+      "message": "提示信息",
+      "close":{
+        "close1":"1"
+      }        
+    },
+    "alert6":{ 
+      "class": "bl-alert-success bl-alert-with-description", 
+      "icon": "blicon-alert-ok", 
+      "name": "成功", 
+      "message": "提示信息",
+      "close":{
+        "close2":"1"
+      }        
+    },
+    "alert7":{ 
+      "class": "bl-alert-warning bl-alert-with-description", 
+      "icon": "blicon-alert-warning", 
+      "name": "提示信息", 
+      "message": "提示信息",
+      "close":{
+        "close2":"1"
+      }        
+    },
+    "alert8":{ 
+      "class": "bl-alert-info bl-alert-with-description", 
+      "icon": "blicon-alert-warning", 
+      "name": "提示信息", 
+      "message": "提示信息"        
+    }
+}

@@ -1,0 +1,102 @@
+{{#each form}}
+<div class="bl-row bl-form-item" 
+	{{#if formstyle}}
+		style="{{formstyle}}"
+	{{/if}}
+	>
+	{{#if label}}
+		<div class="bl-form-item-label {{label.style}}">
+			{{#label}}
+				{{> label/label}}
+			{{/label}}
+		</div>
+	{{/if}}
+	{{#if input}}
+		<div class="bl-form-item-control-wrapper {{input.style}}">
+			<div class="bl-form-item-control ">
+				{{#input}}
+					{{> input/input}}
+				{{/input}}
+			</div>
+		</div>
+	{{/if}}
+	{{#if httpinput}}
+		<span class="bl-input-group-wrapper {{httpinput.style}}">
+		  <span class="bl-input-wrapper bl-input-group">
+		  	<span class="bl-input-group-addon">Http://</span>
+		  	<input type="text" class="bl-input {{httpinput.class}}" value="" placeholder="{{httpinput.placeholder}}" id="{{httpinput.id}}">
+		  	<span class="bl-input-group-addon">{{httpinput.endtext}}</span>
+		  </span>
+		</span>
+	{{/if}}
+	{{#if img}}
+		<a href="" class="bl-form-yzm"><img src="{{img.src}}"></a>
+	{{/if}}
+	{{#if textarea}}
+		<div class="bl-form-item-control-wrapper {{textarea.style}}">
+			<div class="bl-form-item-control ">
+				{{#textarea}}
+					{{> textarea/textarea}}
+				{{/textarea}}
+			</div>
+		</div>
+	{{/if}}
+	{{#if date}}
+		<div class="bl-form-item-control-wrapper {{date.style}}">
+			<div class="bl-form-item-control ">
+				{{#date}}
+					{{> date/date}}
+				{{/date}}
+			</div>
+		</div>
+	{{/if}}
+	{{#if select}}
+		<div class="bl-form-item-control-wrapper {{select.style}}">
+			<div class="bl-form-item-control ">
+				{{#select}}
+					{{> select/select}}
+				{{/select}}
+			</div>
+		</div>
+	{{/if}}
+	{{#if checkbox}}
+		<div class="bl-form-item-control-wrapper {{checkbox.style}}">
+			<div class="bl-form-item-control ">
+				{{#each checkbox.list}}
+					{{> checkbox/checkbox}}
+				{{/each}}
+				{{#if checkbox.other}}
+					{{{checkbox.other}}}
+				{{/if}}
+			</div>
+		</div>	  
+	{{/if}}
+	{{#if radio}}
+		<div class="bl-form-item-control-wrapper {{radio.style}}">
+			<div class="bl-form-item-control ">
+				{{#each radio.list}}
+					{{> radio/radio}}
+				{{/each}}
+			</div>
+		</div>	  
+	{{/if}}
+	{{#if buttonline}}
+		<div class="bl-form-item-control-wrapper {{buttonline.style}}">
+			{{#each buttonline.button}}
+				{{> button/button}}
+			{{/each}}
+		</div>	  
+	{{/if}}
+	{{#if file}}
+		<div class="bl-form-item-control-wrapper {{file.style}}">
+			{{#each file.file}}
+				{{> file/file}}
+			{{/each}}
+			<div class="clear-color">{{file.info}}</div>
+		</div>
+	{{/if}}
+	{{#if other}}
+		{{other.other}}
+	{{/if}}
+</div>
+{{/each}}

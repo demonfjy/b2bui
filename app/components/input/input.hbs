@@ -1,0 +1,24 @@
+{{#if iconinput}}
+<span class="bl-input-affix-wrapper">
+    <input type="text" value="" id="{{id}}" name="name" class="bl-input {{class}}" {{#if disabled}}
+  disabled
+{{/if}}
+placeholder="{{placeholder}}">
+    <span class="bl-input-suffix"><i class="blicon {{iconclass}}"></i></span>
+    <div class="bl-select-dropdown bl-select-dropdown--single bl-select-dropdown-placement-bottomLeft">
+        <div style="overflow: auto;">
+            <ul class="bl-select-dropdown-menu bl-select-dropdown-menu-vertical  bl-select-dropdown-menu-root" role="menu" aria-activedescendant="">
+				{{#each name}}  
+					<li unselectable="unselectable" class="bl-select-dropdown-menu-item" role="menuitem" aria-selected="false">{{this}}</li>
+				{{/each}}
+            </ul>
+        </div>
+    </div>
+</span>
+{{else}}
+<input type="{{type}}" value="" id="{{id}}" name="{{name}}" class="bl-input {{class}}" 
+{{#if disabled}}
+  disabled
+{{/if}}
+placeholder="{{placeholder}}">
+{{/if}}

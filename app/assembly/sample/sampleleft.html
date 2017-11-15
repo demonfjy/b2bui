@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="../../css/sampleleft.css">
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            {{#each list1}}
+            <li class="layui-nav-item {{ liclass}}">
+                <a class="" href="javascript:;">{{ listtitle }}<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    {{#each list2}}
+                    <dd class="{{ ddclass }}"><a href="{{ hrefname }}.html" target="iframeright" id="{{ hrefname }}">{{ hreftitle }}</a></dd>
+                    {{/each}}
+                </dl>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

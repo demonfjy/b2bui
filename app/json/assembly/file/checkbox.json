@@ -1,0 +1,14 @@
+{
+	"style" : ["checkbox"],
+	"require": "js/assembly/file/checkbox",
+    "checkbox1":{
+      "text": "30天内免登录",
+      "class":"",
+      "other":"<a href=''>忘记密码</a>"
+    }, 
+    "checkbox2":{
+      "text": "30天内免登录",
+      "class":"bl-checkbox-disabled",
+      "disabled":"1"
+    }
+}

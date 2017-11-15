@@ -1,0 +1,61 @@
+@import "tobe/base";
+@import "tobe/components/layout/layout";
+@import "tobe/components/sider/sider";
+@import "tobe/components/header/header";
+@import "tobe/components/crumbs/crumbs";
+@import "tobe/components/alert/alert";
+@import "tobe/components/form/form";
+@import "icon";
+@import "tobe/components/checkbox/checkbox";
+@import "tobe/components/file/file";
+@import "tobe/components/date/date";
+@import "tobe/components/select/select";
+@import "tobe/components/radio/radio";
+@import "tobe/components/page/page";
+@import "tobe/components/show/show";
+
+.widget-area{
+  width:1208px;
+  margin:0 auto;
+  background:#fff;
+  margin-bottom:20px;
+  padding:20px;
+  .widge-name{
+  	width:100%;
+  	height:30px;
+  	line-height:30px;
+  	font-size:20px;
+  	font-weight:bold;
+  	text-align:center;
+  }
+  .widge-line{
+  	width:100%;
+  	height:auto;
+  	line-height:22px;
+  	font-size:14px;
+  	margin-top:8px;
+  }
+  .widge-code{
+  	width:100%;
+  	height:auto;
+  	line-height:22px;
+  	font-size:14px;
+  	margin-top:8px;
+  	background:#000;
+  	color:#fff;
+  	padding:10px;
+  	.bz{
+  	color:yellow;
+    }
+  }
+  .widge-message{
+  	width:100%;
+  	height:auto;
+  	line-height:22px;
+  	font-size:14px;
+  	margin-top:8px;
+  	background:#f5f5f5;
+  	padding:10px;
+  }
+}
+

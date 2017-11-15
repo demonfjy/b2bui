@@ -1,0 +1,60 @@
+@import "../../function";
+$layout-prefix-cls: "#{$bl-prefix}-header";
+.#{$layout-prefix-cls}{
+	width:100%;
+	min-width:1208px;
+	padding-left:32px;
+	&-tab{
+		max-width:668px;
+		overflow:hidden;
+		height:64px;
+		line-height:64px;
+		position:relative;		
+		&-bar{
+			width:104px;
+			height:4px;
+			z-index: 1;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      box-sizing: border-box;
+      background:$primary-color;      
+		}
+		a.link{
+			width:104px;
+			height:64px;
+			line-height:64px;
+			text-align:center;
+			color:#666;
+			font-size:14px;
+			display:inline-block;
+			&.select{
+				color:$primary-color;
+			}
+		}
+	}
+	&-message{
+		max-width:500px;
+		overflow:hidden;
+		height:64px;
+		line-height:64px;
+		float:right;
+		display:inline;
+		color:#666;
+		text-align:right;
+		font-size:14px;
+		a:hover{
+			text-decoration:underline;
+		}
+		.name{
+			color:#666;
+		}
+		.link{
+			color:#666;
+		}
+		s{
+			padding:0 12px;
+			text-decoration:none;
+		}
+	}
+}

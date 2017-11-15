@@ -1,0 +1,499 @@
+@import "../../function";
+@import "../button/button";
+$input-affix-width: 17;
+
+// size mixins for input
+@mixin input-lg() {
+  padding: $input-padding-vertical-lg $input-padding-horizontal;
+  height: $input-height-lg;
+}
+
+@mixin input-sm() {
+  padding: $input-padding-vertical-sm $input-padding-horizontal;
+  height: $input-height-sm;
+}
+
+// input status
+// == when focus or actived
+@mixin active($color: $outline-color) {
+  border-color: mix($color ,#ffffff, 80%);
+  outline: 0;
+  box-shadow: 0 0 $outline-blur-size $outline-width fade($color, 20%);
+}
+
+// == when hoverd
+@mixin hover($color: $input-hover-border-color) {
+  border-color: mix($color ,#ffffff, 80%);
+}
+
+@mixin disabled() {
+  background-color: $input-disabled-bg;
+  opacity: 1;
+  cursor: not-allowed;
+  color: $disabled-color;
+  &:hover {
+    @include hover($input-border-color);
+  }
+}
+
+// Basic style for input
+@mixin input() {
+  position: relative;
+  display: inline-block;
+  padding: $input-padding-vertical-base $input-padding-horizontal;
+  width: 100%;
+  height: $input-height-base;
+  cursor: text;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none;
+  border: $border-width-base $border-style-base $input-border-color;
+  border-radius: $border-radius-base;
+  @include placeholder(); // Reset placeholder
+  transition: all .3s;
+
+  &:hover {
+    @include hover();
+  }
+
+  &:focus {
+    @include active();
+  }
+
+  &[disabled] {
+    @include disabled();
+  }
+
+  // Reset height for `textarea`s
+  textarea {
+    max-width: 100%; // prevent textearea resize from coming out of its container
+    height: auto;
+    vertical-align: bottom;
+  }
+
+  // Size
+  &-lg {
+    @include input-lg();
+  }
+
+  &-sm {
+    @include input-sm();
+  }
+}
+
+// label input
+@mixin input-group($inputClass) {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+
+  // Undo padding and float of grid classes
+  &[class*="col-"] {
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > [class*="col-"] {
+    padding-right: 8px;
+  }
+
+  &-addon,
+  &-wrap,
+  > .#{$inputClass} {
+    display: table-cell;
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+  }
+
+  &-addon,
+  &-wrap {
+    width: 1px; // To make addon/wrap as small as possible
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  &-wrap > * {
+    display: block !important;
+  }
+
+  .#{$inputClass} {
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  &-addon {
+    padding: $input-padding-vertical-base $input-padding-horizontal;
+    font-size: $font-size-base;
+    font-weight: normal;
+    line-height: 1;
+    color: $input-color;
+    text-align: center;
+    background-color: #eee;
+    border: $border-width-base $border-style-base $input-border-color;
+    border-radius: $border-radius-base;
+    position: relative;
+    transition: all .3s;
+
+    // Reset Select's style in addon
+    .#{$bl-prefix}-select {
+      margin: -($input-padding-vertical-base + 1) (-$input-padding-horizontal);  // lesshint spaceAroundOperator: false
+
+      .#{$bl-prefix}-select-selection {
+        background-color: inherit;
+        margin: -1px;
+        border: $border-width-base $border-style-base transparent;
+        box-shadow: none;
+      }
+
+      &-open,
+      &-focused {
+        .#{$bl-prefix}-select-selection {
+          color: $primary-color;
+        }
+      }
+    }
+
+    > i:only-child:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  // Reset rounded corners
+  > span > .#{$inputClass}:first-child,
+  > .#{$inputClass}:first-child,
+  &-addon:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+    // Reset Select's style in addon
+    .#{$bl-prefix}-select .#{$bl-prefix}-select-selection {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  > .#{$inputClass}-affix-wrapper {
+    &:not(:first-child) .#{$inputClass} {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &:not(:last-child) .#{$inputClass} {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &-addon:first-child {
+    border-right: 0;
+  }
+  &-addon:last-child {
+    border-left: 0;
+  }
+
+  > .#{$inputClass}:last-child,
+  &-addon:last-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+    // Reset Select's style in addon
+    .#{$bl-prefix}-select .#{$bl-prefix}-select-selection {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  // Sizing options
+  &-lg .#{$inputClass},
+  &-lg > &-addon {
+    @include input-lg();
+  }
+
+  &-sm .#{$inputClass},
+  &-sm > &-addon {
+    @include input-sm();
+  }
+
+  .#{$inputClass}-affix-wrapper {
+    display: table-cell;
+    width: 100%;
+    float: left;
+  }
+  
+}
+
+@mixin input-affix-wrapper($inputClass) {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .#{$inputClass} {
+    z-index: 1;
+  }
+
+  &:hover .#{$inputClass} {
+    @include hover();
+  }
+
+  .#{$inputClass}-prefix,
+  .#{$inputClass}-suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    line-height: 0;
+  }
+
+  .#{$inputClass}-prefix {
+    left: $input-padding-horizontal;
+  }
+
+  .#{$inputClass}-suffix {
+    right: $input-padding-horizontal;
+  }
+
+  .#{$inputClass}:not(:first-child) {
+    padding-left: $input-padding-horizontal + $input-affix-width;
+  }
+
+  .#{$inputClass}:not(:last-child) {
+    padding-right: $input-padding-horizontal + $input-affix-width;
+  }
+}
+
+.#{$bl-prefix}-input-search-icon {
+  cursor: pointer;
+  transition: all .3s;
+  font-size: 14px;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+
+.#{$bl-prefix}-search-input-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.#{$bl-prefix}-search-input {
+  &.#{$bl-prefix}-input-group .#{$bl-prefix}-input:first-child,
+  &.#{$bl-prefix}-input-group .#{$bl-prefix}-select:first-child {
+    border-radius: $border-radius-base;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+  }
+
+  &.#{$bl-prefix}-input-group .#{$bl-prefix}-input:first-child {
+    padding-right: 36px;
+  }
+
+  .#{$bl-prefix}-search-btn {
+    @include btn-default;
+    border-radius: 0 $border-radius-base - 1 $border-radius-base - 1 0;
+    left: -1px;
+    position: relative;
+    border-width: 0 0 0 1px;
+    z-index: 2;
+    padding-left: 8px;
+    padding-right: 8px;
+    &:hover {
+      border-color: $border-color-base;
+    }
+  }
+  &.#{$bl-prefix}-search-input-focus .#{$bl-prefix}-search-btn-noempty,
+  &:hover .#{$bl-prefix}-search-btn-noempty {
+    @include btn-primary;
+  }
+  .#{$bl-prefix}-select-combobox {
+    .#{$bl-prefix}-select-selection__rendered {
+      margin-right: 29px;
+    }
+  }
+}
+
+// Input styles
+.#{$bl-prefix}-input {
+  @include input;
+}
+
+//== Style for input-group: input with label, with button or dropdown...
+.#{$bl-prefix}-input-group {
+  @include input-group("#{$bl-prefix}-input");
+}
+
+// Input with affix: prefix or suffix
+.#{$bl-prefix}-input-affix-wrapper {
+  @include input-affix-wrapper("#{$bl-prefix}-input");
+}
+textarea.#{$bl-prefix}-input {
+  height: auto;
+  resize: none;
+}
+.datetxt{
+padding:0 14px;
+}
+.bl-input-affix-wrapper .blicon-calendar{color:#ccc;transform: rotate(0deg) scale(0.75);}
+
+
+/**/
+$select-prefix-cls: "#{$bl-prefix}-select";
+.#{$select-prefix-cls}-dropdown {
+  &.slide-up-enter.slide-up-enter-active#{$select-prefix-cls}-placement-bottomLeft,
+  &.slide-up-appear.slide-up-appear-active#{$select-prefix-cls}-placement-bottomLeft {
+    animation-name: antSlideUpIn;
+  }
+
+  &.slide-up-enter.slide-up-enter-active#{$select-prefix-cls}-placement-topLeft,
+  &.slide-up-appear.slide-up-appear-active#{$select-prefix-cls}-placement-topLeft {
+    animation-name: antSlideDownIn;
+  }
+
+  &.slide-up-leave.slide-up-leave-active#{$select-prefix-cls}-placement-bottomLeft {
+    animation-name: antSlideUpOut;
+  }
+
+  &.slide-up-leave.slide-up-leave-active#{$select-prefix-cls}-placement-topLeft {
+    animation-name: antSlideDownOut;
+  }
+
+  &-hidden {
+    display: none;
+  }
+
+  background-color: $component-background;
+  box-shadow: $box-shadow-base;
+  border-radius: $border-radius-base;
+  box-sizing: border-box;
+  z-index: $zindex-dropdown;
+  /*left: -9999px;
+  top: -9999px;*/
+  position: absolute;
+  
+  outline: none;
+  overflow: hidden;
+  font-size: $font-size-base;
+  
+  width:100%;
+  display: none;
+  &-menu {
+    outline: none;
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    list-style: none;
+    max-height: 250px;
+    overflow: auto;
+
+    &-item-group-list {
+      margin: 0;
+      padding: 0;
+
+      > .#{$select-prefix-cls}-dropdown-menu-item {
+        padding-left: 24px;
+      }
+    }
+
+    &-item-group-title {
+      color: $text-color-secondary;
+      line-height: 1.5;
+      padding: 8px 16px;
+    }
+
+    &-item {
+      position: relative;
+      display: block;
+      padding: 7px 16px;
+      font-weight: normal;
+      color: $text-color;
+      white-space: nowrap;
+      cursor: pointer;
+      overflow: hidden;
+      transition: background 0.3s ease;
+	  line-height:18px;
+      &:hover,
+      &-active {
+        background-color:#ecf6fd /*$primary-1*/;
+      }
+
+      &-disabled {
+        color: $disabled-color;
+        cursor: not-allowed;
+
+        &:hover {
+          color: $disabled-color;
+          background-color: $component-background;
+          cursor: not-allowed;
+        }
+      }
+
+      &-selected {
+        &,
+        &:hover {
+          background-color: $background-color-base;
+          font-weight: bold;
+          color: $text-color;
+        }
+      }
+
+      &-divider {
+        height: 1px;
+        margin: 1px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+        line-height: 0;
+      }
+    }
+  }
+
+  &.#{$select-prefix-cls}--multiple {
+    .#{$select-prefix-cls}-dropdown-menu-item {
+      &:after {
+        @include iconfont-font("\e632");
+        color: transparent;
+        /*@include iconfont-size-under-12px(10px);*/
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+        font-weight: bold;
+        text-shadow: 0 0.1px 0, 0.1px 0 0, 0 -0.1px 0, -0.1px 0;
+      }
+
+      &:hover:after {
+        color: #ddd;
+      }
+
+      &-disabled:after {
+        display: none;
+      }
+
+      &-selected:after,
+      &-selected:hover:after {
+        color: $primary-color;
+        display: inline-block;
+      }
+    }
+  }
+
+  &-container-open,
+  &-open {
+    .#{$select-prefix-cls}-dropdown {
+      display: block;
+    }
+  }
+}

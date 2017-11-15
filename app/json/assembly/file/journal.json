@@ -1,0 +1,27 @@
+{
+	"style" : ["journal"],
+	"require": "js/journal",
+	"journal" : [{
+		"author" : "姚文定",
+		"edition" : "1.0.1",
+		"time" : "2017-10-13",
+		"explain" : "提示信息组件说明",
+		"listcontent" : ["添加提示信息说明的组件结构说明", "更新提示信息框的样式表", "修改提示信息js"]
+	},
+	{
+		"author" : "姚文定",
+		"edition" : "1.0.0",
+		"time" : "2017-10-13",
+		"explain" : "添加基础说明部分开始使用说明",
+		"listcontent" : [{
+			"content" : "1",
+			"contenttitle" : "运行环境",
+			"contentinfo" : ["添加安装nodejs简要说明", "添加安装cnpm(taobao镜像)简要说明", "添加全局安装gulp简要说明", "添加新建package.json文件简要说明", "添加本地安装gulp插件简要说明","添加新建gulpfile.js文件（重要）简要说明"]
+		},
+		{
+			"content" : "1",
+			"contenttitle" : "项目机构",
+			"contentinfo" : ["添加项目结构图", "添加项目结构图详细说明"]
+		}]
+	}]
+}

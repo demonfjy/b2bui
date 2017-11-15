@@ -1,0 +1,28 @@
+{
+	"style" : ["date"],
+	"require": "js/assembly/file/date",
+    "date1":{ 
+		"id":"ticket-date",
+		"name":"",
+		"class":"bl-input-lg",
+		"placeholder":"成立时间"
+    },
+	"date2":{
+		"sptype":"1",
+		"sptext":"至",          
+		"style": "bl-col-xs-20 bl-col-sm-20 ",
+		"width": "240",
+		"date1":{
+			"id":"ticket-startdate", 
+			"name": "form-date", 
+			"class" : " bl-input-lg",
+			"placeholder": "开始时间"
+		},
+		"date2":{
+			"id":"ticket-enddate", 
+			"name": "form-date", 
+			"class" : " bl-input-lg",
+			"placeholder": "结束时间"
+		} 
+	}
+}

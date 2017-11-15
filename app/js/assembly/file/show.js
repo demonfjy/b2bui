@@ -1,0 +1,2 @@
+require(['../../show/show'], function() {
+});

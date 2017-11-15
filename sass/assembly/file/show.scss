@@ -1,0 +1,15 @@
+@import "icon";
+@import "tobe/components/show/show";
+@import "tobe/components/button/button";
+.w450{
+	position:absolute;
+	width:450px;
+}
+.show-info .bl-modal-mask1,.show-info .bl-modal-wrap {
+	position:absolute;
+}
+.show-info .bl-modal-wrap {
+	width:500px;
+	left:50%;
+	margin-left:-250px !important;
+}

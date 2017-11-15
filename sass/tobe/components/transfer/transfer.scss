@@ -1,0 +1,116 @@
+@import "../../function";
+$transfer-prefix-cls: "#{$bl-prefix}-transfer";
+.#{$transfer-prefix-cls}{
+	width:510px;
+	position:relative;
+	font-size:0;
+	&-list {
+    border: 1px solid #e9e9e9;
+    display: inline-block;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: relative;
+    width: 240px;
+    height: 336px;
+    .#{$transfer-prefix-cls}-body{
+    	height:300px;
+    	overflow-y:auto;
+    }
+    &:first-child .#{$transfer-prefix-cls}-body{
+    	height:264px;
+    }
+    &-header {
+      border-radius: 4px 4px 0 0;
+      color: #666;
+      border-bottom: 1px solid #e9e9e9;
+      overflow: hidden;
+      width:100%;
+      height:34px;
+      line-height:34px;
+      padding:0 15px;
+	  box-sizing:border-box;
+      .#{$transfer-prefix-cls}-list-title {
+        float:right;        
+      }
+    }
+    &-search {
+      width:224px;
+      height:28px;
+      position:relative;
+      margin:8px 0 0 8px;
+      &:after{
+      	color: #ccc;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        width: 28px;
+        line-height: 22px;
+        text-align: center;
+        font-size: 12px;
+        content:"\e6ea";
+        font-family: "bl-font" !important;
+      }      
+    }
+    &-floor{
+    	width:100%;
+    	height:28px;
+    	line-height:28px;
+    	position:relative;
+    	padding:0 15px;
+		box-sizing:border-box;
+    	i.blicon-show{
+    		position:absolute;
+    		top:0;
+    		right:15px;
+    		width:28px;
+    		height:28px;
+    		line-height:28px;
+    		font-size:12px;
+    		text-align:center;
+    		transform:scale(.6) rotate(180deg);
+    		transition: transform .3s;
+    		&.show{
+    			transform:scale(.6) rotate(180deg);
+    		}
+    	}
+    	&.j-transfer-city{
+    		padding-left:23px;
+    	}
+    	&.j-transfer-area{
+    		padding-left:31px;
+    	}
+    	&.j-transfer-shop{
+    		padding-left:39px;
+    		i.blicon-show{
+    			display:none;
+    		}
+    	}
+    }
+  }
+  &-arrow{
+  	display:inline-block;
+  	width:22px;
+  	vertical-align: middle;
+  	button{
+  		display: block;
+  		height:22px;
+  		width:22px;
+  		padding:0;
+  		i.blicon-show{
+  			transform:scale(.8) rotate(90deg);
+  			display:inline-block;
+  			margin-left:-2px;
+  		}
+  		&:first-child {
+        margin-bottom: 4px;
+        i.blicon-show{
+        	transform:scale(.8) rotate(270deg);
+        	padding:0 0 0 3px;
+        	margin:0;
+        }
+      }
+      
+  	}
+  }
+}

@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">按钮 button</h1>
+    <blockquote class="layui-elem-quote">
+        button 按钮分为大、中、小，白、黑、红，可点击和不可点击按钮。大概有十多种，主要看class搭配。</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#button1}}
+      	  {{> button/button}}
+        {{/button1}}	
+        {{#button2}}
+      	  {{> button/button}}
+        {{/button2}}
+        {{#button3}}
+    	    {{> button/button}}
+        {{/button3}}
+        {{#button4}}
+       	 {{> button/button}}
+        {{/button4}}
+        {{#button5}}
+       	 {{> button/button}}
+        {{/button5}}	
+        {{#button6}}
+      	  {{> button/button}}
+        {{/button6}}
+        {{#button7}}
+      	  {{> button/button}}
+        {{/button7}}
+        {{#button8}}
+      	  {{> button/button}}
+        {{/button8}}
+        <br><br>
+        {{#button9}}
+			{{> button/button}}
+		{{/button9}}
+  </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;button class=&quot;bl-btn <span>{</span>{class}}&quot; id=&quot;<span>{</span>{id}}&quot; <span>{</span>{#if disabled}} disabled <span>{</span>{/if}}&gt;{<span>{</span>{name}}}&lt;/button&gt;</div></pre>
+        <p><span>{</span>{class}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{id}}定义按钮id。<span>{</span>{#if disabled}}判断是否可点击。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;icon&quot;;//图标样式<br>@import &quot;tobe/components/button/button&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#button1}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button1}}	<br><span>{</span>{#button2}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button2}}<br><span>{</span>{#button3}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button3}}<br><span>{</span>{#button4}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button4}}<br><span>{</span>{#button5}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button5}}	
+<span>{</span>{#button6}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button6}}<br><span>{</span>{#button7}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button7}}<br><span>{</span>{#button8}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button8}}<br>&lt;br&gt;&lt;br&gt;<br><span>{</span>{#button9}}<br>    <span>{</span>{&gt; button/button}}<br><span>{</span>{/button9}}</div></pre>
+        <p><span>{</span>{#button1}}、<span>{</span>{#button2}}、<span>{</span>{#button3}}、<span>{</span>{#button4}}、<span>{</span>{#button5}}、<span>{</span>{#button6}}、<span>{</span>{#button7}}、<span>{</span>{#button8}}、<span>{</span>{#button9}}为json数据名称，可自行定义，<span>{</span>{&gt; button/button}}为组件在项目中的位置。</p>
+    </div>
+  <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/button.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/button.js&quot;<br>    },<br>    &quot;button1&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary bl-btn-sm&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button2&quot;:{<br>      &quot;class&quot; : &quot;&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button3&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary bl-btn-lg&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button4&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button5&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary&quot;, <br>      &quot;name&quot;: &quot;登录&quot;, <br>      &quot;disabled&quot;: &quot;1&quot; <br>    },<br>    &quot;button6&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-dashed&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button7&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-danger&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    },<br>    &quot;button8&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary&quot;, <br>      &quot;name&quot;: &quot;&lt;i class='blicon blicon-ok'&gt;&lt;/i&gt;&lt;span&gt;确认&lt;/span&gt;&quot;      <br>    },<br>    &quot;button9&quot;:{<br>      &quot;class&quot; : &quot;bl-btn-primary bl-btn-lg bl-btn-full&quot;, <br>      &quot;name&quot;: &quot;登录&quot;      <br>    }<br>}</div></pre>
+    <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“button1”、“button2”、“button3”、“button4”、“button5”、“button6”、“button7”、“button8”、“button9”、组件调用数组名称一致。</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

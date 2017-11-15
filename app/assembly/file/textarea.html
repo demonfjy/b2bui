@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css"> {{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css"> {{/each}}
+<div class="site-content">
+    <h1 class="site-h1">多行文本输入框 textarea</h1>
+    <blockquote class="layui-elem-quote">textarea 多行文本输入框</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">{{#textarea1}} {{> textarea/textarea}} {{/textarea1}}</div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;textarea type=&quot;textarea&quot; rows=&quot;<span>{</span>{height}}&quot; class=&quot;bl-input <span>{</span>{class}}&quot; value=&quot;&quot; id=&quot;<span>{</span>{id}}&quot; <span>{</span>{#if disabled}} disabled <span>{</span>{/if}} placeholder=&quot;<span>{</span>{placeholder}}&quot;&gt;&lt;/textarea&gt;</div></pre>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;tobe/components/input/input&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#textarea1}}
+    <span>{</span>{&gt; textarea/textarea}}
+<span>{</span>{/textarea1}}</div></pre>
+        <p><span>{</span>{#textarea1}}为json数据名称，可自行定义，<span>{</span>{&gt; textarea/textarea}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/textarea.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/textarea.js&quot;<br>    },<br>    &quot;textarea1&quot; : {
+        &quot;height&quot; : &quot;4&quot;,<br>        &quot;class&quot; : &quot;&quot;,<br>        &quot;id&quot; : &quot;&quot;,<br>        &quot;placeholder&quot; : &quot;输入备注&quot;
+    }<br>}</div></pre>
+        <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“textarea”</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

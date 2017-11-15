@@ -1,0 +1,15 @@
+<div class="bl-upload bl-upload-select bl-upload-select-picture-card {{class}}">
+    <span tabindex="0" class="bl-upload" role="button">
+        <input type="file" id="{{id}}" name="{{name}}" accept="" multiple title=" ">
+        <div>
+            <i class="blicon blicon-add"></i>
+            <div class="bl-upload-text">{{text}}</div>
+        </div>
+    </span>
+    <div class="bl-upload-img">
+		{{#if img}}
+			<img src="{{img.src}}">
+		{{/if}}
+	</div>
+    <div class="bl-upload-x">X</div>
+</div>

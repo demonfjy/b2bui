@@ -1,0 +1,81 @@
+{
+	"style" : ["table"],
+	"require" : "js/assembly/file/table",
+	"table1" : {
+		"style" : "aaa",
+		"th" : [{
+			"width" : "",
+			"align" : "",
+			"text" : "标题1"
+		},
+		{
+			"width" : "",
+			"align" : "",
+			"text" : "标题2"
+		},
+		{
+			"width" : "",
+			"align" : "",
+			"text" : "标题3"
+		},
+		{
+			"width" : "",
+			"align" : "",
+			"text" : "标题4"
+		}],
+		"tr": [{
+			"td" : [{
+				"align" : "center",
+				"text" : "1"
+			},
+			{
+				"align" : "center",
+				"text" : "1"
+			},
+			{
+				"align" : "center",
+				"text" : "1"
+			},
+			{
+				"align" : "center",
+				"text" : "1"
+			}]
+		},
+		{
+			"td" : [{
+				"align" : "center",
+				"text" : "2"
+			},
+			{
+				"align" : "center",
+				"text" : "2"
+			},
+			{
+				"align" : "center",
+				"text" : "2"
+			},
+			{
+				"align" : "center",
+				"text" : "2"
+			}]
+		},
+		{
+			"td" : [{
+				"align" : "center",
+				"text" : "3"
+			},
+			{
+				"align" : "center",
+				"text" : "3"
+			},
+			{
+				"align" : "center",
+				"text" : "3"
+			},
+			{
+				"align" : "center",
+				"text" : "3"
+			}]
+		}]
+	}
+}

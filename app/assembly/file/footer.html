@@ -1,0 +1,42 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">页脚 footer</h1>
+    <blockquote class="layui-elem-quote">footer 页脚，尾部版权目前提供了两种。</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#footer1}}
+        	{{> footer/footer}} 
+		{{/footer1}}
+        <br><br>
+        {{#footer2}}
+        	{{> footer/footer}} 
+		{{/footer2}}
+  </div>
+  <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div><span>{</span>{#if footerbottom}}<br>    &lt;div class=&quot;footer&quot;&gt;《中华人民共和国电信与信息服务业务经营许可证》编号：沪ICP备05015800号 2.21&lt;br&gt;版权:百联全渠道跨境有限公司&lt;/div&gt;<br><span>{</span>{else}}<br>    &lt;div class=&quot;bl-layout-footer&quot; style=&quot;text-align: center;&quot;&gt;©2017 i百联产品设计部出品&lt;/div&gt;<br><span>{</span>{/if}}<br><span>{</span>{#each gl.scripts}}    <br>    &lt;script src=&quot;<span>{</span>{this}}&quot;&gt;&lt;/script&gt;			<br><span>{</span>{/each}}<br>&lt;script type=&quot;text/javascript&quot; data-main=&quot;<span>{</span>{gl.require}}&quot; src=&quot;js/require.min.js&quot;&gt;&lt;/script&gt;</div></pre>
+      <p><span>{</span>{#each gl.scripts}} 变量主要用于存放js库，例如：Dojo 、Scriptaculous 、Prototype 、yui-ext 、Jquery 、Mochikit、mootools 、moo.fx。<span>{</span>{#if footerbottom}}判断选择哪种尾部。</p>
+  </div>
+  <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#footer1}}<br>    <span>{</span>{&gt; footer/footer}}<br><span>{</span>{/footer1}}
+<span>{</span>{#footer2}}<br>    <span>{</span>{&gt; footer/footer}}<br><span>{</span>{/footer2}}</div></pre>
+        <p><span>{</span>{#footer1}}、<span>{</span>{#footer2}}为json数据名称，可自行定义。<span>{</span>{&gt; footer/footer}}为组件在项目中的位置。</p>
+  </div>
+  <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/footer.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/footer.js&quot;<br>    },<br>    &quot;footer1&quot;:{<br>    },<br>    &quot;footer2&quot;:{
+        &quot;footerbottom&quot;:&quot;1&quot;<br>    }<br>}</div></pre>
+    <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“footer1”、&quot;footer2&quot;与组件调用数组名称一致。“footerbottom”：“1”，判断使用哪种尾部。</p>
+  </div>
+  <div class="layui-elem-quote">
+    <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

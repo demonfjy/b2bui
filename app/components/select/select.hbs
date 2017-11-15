@@ -1,0 +1,103 @@
+{{#if normaltype}}
+<div class="bl-select-lg {{class}}">
+    <div class="bl-select-selection bl-select-selection--single" id="{{id}}">
+        <div class="bl-select-selection__rendered">
+            <div class="bl-select-selection__placeholder" title="a1">{{placeholder}}</div>
+            <div class="bl-select-selection-selected-value" title="a1"></div>
+        </div>
+        <span class="bl-select-arrow">
+            <b></b>
+        </span>
+    </div>
+    <div class="bl-select-dropdown bl-select-dropdown--single bl-select-dropdown-placement-topLeft ">
+        <div style="overflow: auto;">
+            <ul class="bl-select-dropdown-menu bl-select-dropdown-menu-vertical  bl-select-dropdown-menu-root">        
+            	{{#each name}}    	                        
+                <li class="bl-select-dropdown-menu-item">{{this}}</li>
+              {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+{{#if linktype}}
+<div class="bl-select-lg {{class}}">
+    <div class="bl-select-selection bl-select-selection--multiple">
+        <div class="bl-select-selection__rendered" id="{{id}}">
+            <div class="bl-select-selection__placeholder">{{placeholder}}</div>
+            <ul></ul>
+        </div>
+    </div>
+    <div class="bl-select-show">
+        <div>
+            <div class="bl-select-dropdown bl-select-dropdown--multiple bl-select-dropdown-placement-topLeft bg-bgnone">
+            	{{#each namelist}}
+                <div class="bl-select-show-left"  style="{{display}}">
+                    <ul>
+                    	{{#each name}}  
+                        <li>
+                            {{> checkbox/checkbox}}
+                        </li>
+                      {{/each}}
+                    </ul>
+                </div>
+              {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+{{#if multitype}}
+<div class="bl-select-lg {{class}}">
+    <div class="bl-select-selection bl-select-selection--multiple">
+        <div class="bl-select-selection__rendered" id="{{id}}">
+            <div class="bl-select-selection__placeholder">{{placeholder}}</div>
+            <ul></ul>
+        </div>
+    </div>
+    <div class="bl-select-show">
+        <div>
+            <div class="bl-select-dropdown bl-select-dropdown--multiple bl-select-dropdown-placement-topLeft ">
+                <div class="bl-select-show-left-1">
+                    <ul>
+                    	{{#each name}}
+                        <li>
+                            {{> checkbox/checkbox}}
+                        </li>
+                      {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+
+{{#if eachlist}}
+	{{#each eachslect}}
+	<div class="bl-select-lg {{class}}">
+		<div class="bl-select-selection bl-select-selection--single" id="{{id}}">
+			<div class="bl-select-selection__rendered">
+				<div class="bl-select-selection__placeholder" title="a1">{{placeholder}}</div>
+				<div class="bl-select-selection-selected-value" title="a1"></div>
+			</div>
+			<span class="bl-select-arrow">
+				<b></b>
+			</span>
+		</div>
+		<div class="bl-select-dropdown bl-select-dropdown--single bl-select-dropdown-placement-topLeft ">
+			<div style="overflow: auto;">
+				<ul class="bl-select-dropdown-menu bl-select-dropdown-menu-vertical  bl-select-dropdown-menu-root">        
+					{{#each name}}    	                        
+					<li class="bl-select-dropdown-menu-item">{{this}}</li>
+				  {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+{{/if}}

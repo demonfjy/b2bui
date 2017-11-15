@@ -1,0 +1,3 @@
+require(['../../checkbox/checkbox'], function() {
+
+});

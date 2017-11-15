@@ -1,0 +1,41 @@
+{
+	"style" : ["button"],
+	"require": "js/button",
+    "button1":{
+      "class" : "bl-btn-primary bl-btn-sm", 
+      "name": "登录"      
+    },
+    "button2":{
+      "class" : "", 
+      "name": "登录"      
+    },
+    "button3":{
+      "class" : "bl-btn-primary bl-btn-lg", 
+      "name": "登录"      
+    },
+    "button4":{
+      "class" : "bl-btn-primary", 
+      "name": "登录"      
+    },
+    "button5":{
+      "class" : "bl-btn-primary", 
+      "name": "登录", 
+      "disabled": "1" 
+    },
+    "button6":{
+      "class" : "bl-btn-dashed", 
+      "name": "登录"      
+    },
+    "button7":{
+      "class" : "bl-btn-danger", 
+      "name": "登录"      
+    },
+    "button8":{
+      "class" : "bl-btn-primary", 
+      "name": "<i class='blicon blicon-ok'></i><span>确认</span>"      
+    },
+    "button9":{
+      "class" : "bl-btn-primary bl-btn-lg bl-btn-full", 
+      "name": "登录"      
+    }
+}

@@ -1,0 +1,48 @@
+<ul class=" bl-menu  bl-menu-inline   bl-menu-dark  bl-menu-root">
+	{{#each layout}}
+	<li class=" bl-menu-submenu-inline 
+		{{#if select}}
+		  bl-menu-submenu-open  bl-menu-submenu-selected  
+		{{/if}}
+		bl-menu-submenu">
+		<div class=" bl-menu-submenu-title">
+			<span>
+				<i class="blicon {{mainicon}}"></i>
+				<span>{{maintxt}}</span>
+		  </span>
+		</div>
+		<ul class=" bl-menu  bl-menu-inline  bl-menu-sub  
+			{{#if select}}
+			{{else}}
+			bl-menu-hidden
+			{{/if}}
+			">
+			{{#each secondmenu}}
+			  {{#if thirdmenu}}
+			    <li class="bl-menu-submenu-inline {{#if select}}bl-menu-submenu-open{{/if}} bl-menu-submenu">
+				    <div class="bl-menu-submenu-title">{{secondtxt}}</div>
+				    <ul class="bl-menu bl-menu-inline bl-menu-sub
+				    	{{#if select}}
+			        {{else}}
+			          bl-menu-hidden
+			        {{/if}}">
+				     	{{#each thirdmenu}}
+				  	    <li class="bl-menu-item
+				  	  	{{#if select}}
+			  	        bl-menu-item-selected
+			          {{/if}}">{{thirdtxt}}</li>
+				  	  {{/each}}
+				    </ul>
+				  </li>
+			  {{else}}
+			    <li class=" 
+			    {{#if select}}
+			  	  bl-menu-item-selected
+			    {{/if}}	  bl-menu-item">{{secondtxt}}</li>
+			  {{/if}}
+
+			{{/each}}
+	  </ul>
+	</li>
+	{{/each}}
+</ul>

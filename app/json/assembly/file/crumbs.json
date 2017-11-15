@@ -1,0 +1,8 @@
+{
+	"style" : ["crumbs"],
+	"require": "js/crumbs",
+    "crumbs1":{ 
+      "title": ["用户注册","用户注册"], 
+      "name": ["用户注册","用户注册"]
+    }
+}

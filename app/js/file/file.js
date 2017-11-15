@@ -1,0 +1,12 @@
+$(".bl-upload-x").click(function(){
+	$(this).hide().siblings(".bl-upload-img").find("img").remove();
+});
+$(".bl-upload").hover(function(){
+	if($(this).find("img").length>0){
+		$(this).find(".bl-upload-x").show();
+	}else{
+		$(this).find(".bl-upload-x").hide();
+	}
+},function(){
+	$(this).find(".bl-upload-x").hide();
+})

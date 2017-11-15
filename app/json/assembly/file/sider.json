@@ -1,0 +1,45 @@
+{
+	"style" : ["sider"],
+	"require" : "js/assembly/file/sider",
+	"sider1" : {
+		"layout" : [{
+			"mainicon" : "blicon-user",
+			"maintxt" : "菜单1",
+			"secondmenu" : [{
+				"secondtxt" : "子菜单1"
+			},
+			{
+				"secondtxt" : "子菜单1"
+			},
+			{
+				"secondtxt" : "子菜单1"
+			}]
+		},
+		{
+			"mainicon" : "blicon-ticket",
+			"maintxt" : "菜单2",
+			"secondmenu" : [{
+				"secondtxt" : "子菜单2"
+			},
+			{
+				"secondtxt" : "子菜单2"
+			},
+			{
+				"secondtxt" : "子菜单2"
+			}]
+		},
+		{
+			"mainicon" : "blicon-form",
+			"maintxt" : "菜单3",
+			"secondmenu" : [{
+				"secondtxt" : "子菜单3"
+			},
+			{
+				"secondtxt" : "子菜单3"
+			},
+			{
+				"secondtxt" : "子菜单3"
+			}]
+		}]
+	}
+}

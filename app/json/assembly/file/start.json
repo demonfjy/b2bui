@@ -1,0 +1,4 @@
+{
+	"style" : ["start"],
+	"require": "js/assembly/file/start"
+}

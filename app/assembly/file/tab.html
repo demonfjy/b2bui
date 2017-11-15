@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css"> {{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css"> {{/each}}
+<div class="site-content">
+    <h1 class="site-h1">tab 列表</h1>
+    <blockquote class="layui-elem-quote">tab</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">{{#tab1}} {{> tab/tab}} {{/tab1}}</div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;div class=&quot;bl-tabs bl-tabs-top <span>{</span>{tabtype}}&quot; tab-name=&quot;<span>{</span>{tabname}}&quot;&gt;<br>    &lt;div class=&quot;bl-tabs-bar&quot;&gt;<br>        &lt;div class=&quot;bl-tabs-nav-container&quot;&gt;<br>            &lt;div class=&quot;bl-tabs-nav-wrap&quot;&gt;<br>                &lt;div class=&quot;bl-tabs-nav-scroll&quot;&gt;<br>                    &lt;div class=&quot;bl-tabs-nav bl-tabs-nav-animated&quot;&gt;<br>                        &lt;div class=&quot;bl-tabs-ink-bar bl-tabs-ink-bar-animated&quot;&gt;&lt;/div&gt;<br>                        <span>{</span>{#each name}}<br>                            &lt;div class=&quot;<span>{</span>{#if active}} bl-tabs-tab-active <span>{</span>{/if}} bl-tabs-tab&quot;&gt;{{{txt}}}&lt;/div&gt;<br>                        <span>{</span>{/each}}<br>                    &lt;/div&gt;<br>                &lt;/div&gt;<br>            &lt;/div&gt;<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;</div></pre>
+        <p><span>{</span>{tabtype}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{id}}定义按钮id。<span>{</span>{#if disabled}}判断时候可点击。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;icon&quot;;<br>@import &quot;tobe/components/tab/tab&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#tab1}}
+    <span>{</span>{&gt; tab/tab}}
+<span>{</span>{/tab1}}</div></pre>
+        <p><span>{</span>{#tab1}}为json数据名称，可自行定义，<span>{</span>{&gt; tab/tab}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/tab.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/tab.js&quot;<br>    },<br>    &quot;tab1&quot; : {<br>        &quot;tabtype&quot; : &quot;aaa&quot;,<br>        &quot;tabname&quot; : &quot;aaa&quot;,<br>        &quot;name&quot; : [{<br>            &quot;active&quot; : &quot;&quot;<br>        },{<br>            &quot;active&quot; : &quot;1&quot;<br>        },{<br>            &quot;active&quot; : &quot;&quot;<br>        }]<br>    }<br>}</div></pre>
+        <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“tab1”组件调用数组名称一致。</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

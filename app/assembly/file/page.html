@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">分页 page</h1>
+    <blockquote class="layui-elem-quote">
+        page 分页，分页目前只提供一种形式。用户可通过class自行调整。</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">普通分页</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#page1}}
+            {{> page/page}}
+        {{/page1}}
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;ul class=&quot;bl-pagination <span>{</span>{class}}&quot; unselectable=&quot;unselectable&quot;&gt;<br>    &lt;li class=&quot;bl-pagination-disabled bl-pagination-prev&quot;&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;<br>    &lt;li title=&quot;1&quot; class=&quot;bl-pagination-item bl-pagination-item-active&quot;&gt;&lt;a&gt;1&lt;/a&gt;&lt;/li&gt;<br>    &lt;li title=&quot;2&quot; class=&quot;bl-pagination-item&quot;&gt;&lt;a&gt;2&lt;/a&gt;&lt;/li&gt;<br>    &lt;li title=&quot;3&quot; class=&quot;bl-pagination-item&quot;&gt;&lt;a&gt;3&lt;/a&gt;&lt;/li&gt;<br>    &lt;li title=&quot;4&quot; class=&quot;bl-pagination-item&quot;&gt;&lt;a&gt;4&lt;/a&gt;&lt;/li&gt;<br>    &lt;li title=&quot;5&quot; class=&quot;bl-pagination-item&quot;&gt;&lt;a&gt;5&lt;/a&gt;&lt;/li&gt;<br>    &lt;li class=&quot;bl-pagination-next&quot;&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;<br>&lt;/ul&gt;</ol></div></pre>
+        <p><span>{</span>{class}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;icon&quot;;//图标样式<br>@import &quot;tobe/components/page/page&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#page1}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; page/page}}<br><span>{</span>{/page1}}    </div></pre>
+        <p><span>{</span>{#page1}}为json数据名称，可自行定义，<span>{</span>{&gt; page/page}}为组件在项目中的位置。</p>
+    </div>
+  <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/page.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/page.js&quot;<br>    },<br>    &quot;page1&quot; : {//与组件对应的数据名称<br>        &quot;class&quot; : &quot;&quot;<br>    }<br>}</div></pre>
+      <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“page1”与组件调用数组名称一致。可定义“class”更改page自己样式</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>Layui - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

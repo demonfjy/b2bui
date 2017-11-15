@@ -1,0 +1,2 @@
+require(['../../input/input'], function() {
+});

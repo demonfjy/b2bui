@@ -1,0 +1,83 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">开始使用 - 入门</h1>
+    <blockquote class="layui-elem-quote">项目运行环境说明，项目结构详解。</blockquote>
+    <blockquote class="site-text layui-elem-quote">
+        组件下载：<a href="#">点击下载</a>
+    </blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">运行环境</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        <p>1、安装nodejs</p>
+        <s>1.1、说明：gulp是基于nodejs，理所当然需要安装nodejs；<br>1.2、安装：打开nodejs官网，点击硕大的绿色Download按钮，它会根据系统信息选择对应版本（.msi文件）。然后像安装QQ一样安装它就可以了（安装路径随意）。</s>
+        <p>2.安装cnpm(taobao镜像)</p>
+        <s></s>
+        <p>3.全局安装gulp</p>
+        <s>3.1、说明：全局安装gulp目的是为了通过她执行gulp任务；<br>3.2、安装：命令提示符执行cnpm install gulp -g</s>
+        <p>4.新建package.json文件</p>
+        <s>4.1、说明：package.json是基于nodejs项目必不可少的配置文件，它是存放在项目根目录的普通json文件；<br>4.2、安装cnpm，执行命令cnpm init，可快速获取版本信息</s>
+        <p>5.本地安装gulp插件</p>
+        <s>5.1、安装：定位目录命令后提示符执行cnpm install --save-dev；<br>5.2、本示例以gulp-less为例（编译less文件），命令提示符执行cnpm install gulp-less --save-dev；</s>
+        <p>6.新建gulpfile.js文件（重要）</p>
+        <s>6.1、说明：gulpfile.js是gulp项目的配置文件，是位于项目根目录的普通js文件（其实将gulpfile.js放入其他文件夹下亦可）。</s>
+        <strong>具体操作请到百度搜索（gulp安装）</strong>
+    </div>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">项目结构介绍</h3><div>├─app //html目录<br>│  │─components //组件模板文件夹（下面有多个组件文件夹）<br>│  │  ├─alert<br>│  │  ├─button<br>│  │  └─...<br>│  │─css //css文件夹（下面是sass文件解析导入的css文件）<br>│  │  ├─font //自定义icon图标文字库
+│  │  ├─i //公用图标文件夹<br>│  │  └─tobe //组件样式文件
+│  │─images //数据图片
+│  │─js //js文件（下面有组件js与公用js）
+│  │  ├─checkbox
+│  │  ├─input<br>│  │  └─...
+│  │─*.html //html文件
+│  └─*.json //json文件<br>├─node_modules  //淘宝镜像文件<br>├─sass //sass文件（用来导出最终css文件，里面包含组件sass、公用与自定义sass文件）
+│  │─font
+│  └─tobe //组件sass文件<br>│─gulpfile.js //gulp配置文件<br>└─package.json //版本信息</div></pre>
+        <p>app文件夹包含html主要文件。<br>
+        node_modules文件夹是淘宝镜像文件，需要命令生成（node_modules包含多个插件）。<br>
+        sass文件夹用来存放scss文件，scss通过命令解析导出最终css文件（app-&gt;css文件夹，sass中文件夹tobe为存放组件部分scss文件夹）。<br>
+        components文件夹包含多个组件。<br>
+        css文件夹为sass文件夹最终解析导出文件（css文件夹中tobe为组件css，i为icon图标文件夹，font为自定义icon图标文字库）。<br>
+        images文件夹用来存放数据图片（会随数据的变更的图片，可删除图片）。<br>
+        js文件夹用来存放页面逻辑或者效果处理的js文件（其中包括多个组件效果js文件）。<strong><br>
+        *.html，*.json文件为编写文件，需要添加页面在此处新建编写，其中*.html文件为html代码编写文件，*.json文件问数据文件（数据包含组件数据与页面基础数据，如引用的css文件、js文件或者html页面标题title）。<br>
+        </strong>其中*.html、*.json需要在同一级文件、名称需要相同，否则无效。<br>
+        gulpfile.js为gulp配置文件。<br>
+        package.json为版本信息。</p>
+    </div>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">实例</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">html代码结构</h3><div><span>{</span>{&gt; head/head}}  //头部组件
+&lt;body&gt;
+    &lt;div&gt;
+    //正文部分
+    &lt;/div&gt;<br><span>    {</span>{&gt; footer/footer}}  //尾部组件<br>&lt;/body&gt;<br>&lt;/html&gt;</div></pre>
+        <p><span>{</span>{&gt; head/head}}头部组件，<span>{</span>{&gt; footer/footer}}尾部组件</p>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div><span>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;, //头部标题<br>        &quot;styles&quot;: [&quot;css/tab.css&quot;], //页面样式<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],  //js库<br>        &quot;require&quot;: &quot;js/tab.js&quot; //页面js<br>    }
+}</span></div></pre>
+        <p>title、styles头部组件内的参数（title标题、styles样式表）。scripts、require尾部组件参数（scripts，js库、require，自定义js）。</p>
+  </div>
+  <div class="layui-elem-quote">
+	<p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

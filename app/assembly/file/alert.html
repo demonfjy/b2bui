@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css">
+{{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css">
+{{/each}}
+<div class="site-content">
+    <h1 class="site-h1">提示 alert</h1>
+    <blockquote class="layui-elem-quote">alert提示组件，组件提供了大致8种样式的提示组件。如有自定义组件可通过<span>{</span>{class}}修改。</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">
+        {{#alert1}}
+     	   {{> alert/alert}}
+        {{/alert1}}
+        {{#alert2}}
+     	   {{> alert/alert}}
+        {{/alert2}}
+        {{#alert3}}
+      	  {{> alert/alert}}
+        {{/alert3}}
+        {{#alert4}}
+        	{{> alert/alert}}
+        {{/alert4}}
+        {{#alert5}}
+        	{{> alert/alert}}
+        {{/alert5}}
+        {{#alert6}}
+        	{{> alert/alert}}
+        {{/alert6}}
+        {{#alert7}}
+        	{{> alert/alert}}
+        {{/alert7}}
+        {{#alert8}}
+        	{{> alert/alert}}
+        {{/alert8}}
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;div class=&quot;bl-alert <span>{</span>{class}}&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class=&quot;blicon <span>{</span>{icon}} bl-alert-icon&quot;&gt;&lt;/i&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;bl-alert-message&quot;&gt;<span>{</span>{name}}&lt;/span&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;bl-alert-description&quot;&gt;<span>{</span>{message}}&lt;/span&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class=&quot;bl-alert-close-icon&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{#if close.close1}}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class=&quot;blicon blicon-error bl-alert-close&quot;&gt;&lt;/i&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{/if}}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{#if close.close2}}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class=&quot;bl-alert-close-icon&quot;&gt;不再提醒&lt;/a&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{/if}}<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>&lt;/div&gt;</div></pre>
+        <p><span>{</span>{class}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{icon}}可用来更改图标样式。<span>{</span>{name}}需要提示的内容。<span>{</span>{message}}提示的详细信息。<span>{</span>{#if close.close1}}、<span>{</span>{#if close.close2}}判断显示关闭还是不再提醒</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;icon&quot;;//图标样式<br>@import &quot;tobe/components/alert/alert&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+      <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件机构调用</h3><div><span>{</span>{#alert1}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert1}}<br><span>{</span>{#alert2}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert2}}<br><span>{</span>{#alert3}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert3}}<br><span>{</span>{#alert4}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert4}}<br><span>{</span>{#alert5}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert5}}<br><span>{</span>{#alert6}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert6}}<br><span>{</span>{#alert7}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert7}}<br><span>{</span>{#alert8}}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>{</span>{&gt; alert/alert}}<br><span>{</span>{/alert8}}</div></pre>
+        <p><span>{</span>{#alert1}}、<span>{</span>{#alert2}}、<span>{</span>{#alert3}}、<span>{</span>{#alert4}}、<span>{</span>{#alert5}}、<span>{</span>{#alert6}}、<span>{</span>{#alert7}}、<span>{</span>{#alert8}}为json数据名称，可自行定义，<span>{</span>{&gt; alert/alert}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{<br>    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/alert.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/alert.js&quot;<br>    },<br>    &quot;alert1&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-error&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-error&quot;, <br>        &quot;name&quot;: &quot;用户名或验证码有误，请重试&quot;, <br>        &quot;message&quot;: &quot;&quot;,<br>        &quot;close&quot;:{<br>            &quot;close1&quot;:&quot;1&quot;<br>        }    <br>    },<br>    &quot;alert2&quot;:{<br>        &quot;class&quot;: &quot;bl-alert-success&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-ok&quot;, <br>        &quot;name&quot;: &quot;成功&quot;, <br>        &quot;message&quot;: &quot;&quot;,<br>        &quot;close&quot;:{<br>            &quot;close2&quot;:&quot;1&quot;<br>        }    <br>    },<br>    &quot;alert3&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-warning&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-warning&quot;, <br>        &quot;name&quot;: &quot;提示信息&quot;, <br>        &quot;message&quot;: &quot;&quot;,<br>        &quot;close&quot;:{<br>            &quot;close2&quot;:&quot;1&quot;<br>        }        <br>    },<br>    &quot;alert4&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-info&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-warning&quot;, <br>        &quot;name&quot;: &quot;提示信息&quot;, <br>        &quot;message&quot;: &quot;&quot;        <br>    },<br>	  &quot;alert5&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-error bl-alert-with-description&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-error&quot;, <br>        &quot;name&quot;: &quot;用户名或验证码有误，请重试&quot;, <br>        &quot;message&quot;: &quot;提示信息&quot;,<br>        &quot;close&quot;:{<br>          &quot;close1&quot;:&quot;1&quot;<br>        }        <br>    },<br>    &quot;alert6&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-success bl-alert-with-description&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-ok&quot;, <br>        &quot;name&quot;: &quot;成功&quot;, <br>        &quot;message&quot;: &quot;提示信息&quot;,<br>        &quot;close&quot;:{<br>          &quot;close2&quot;:&quot;1&quot;<br>        }        <br>    },<br>    &quot;alert7&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-warning bl-alert-with-description&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-warning&quot;, <br>        &quot;name&quot;: &quot;提示信息&quot;, <br>        &quot;message&quot;: &quot;提示信息&quot;,<br>        &quot;close&quot;:{<br>          &quot;close2&quot;:&quot;1&quot;<br>        }        <br>    },<br>    &quot;alert8&quot;:{ <br>        &quot;class&quot;: &quot;bl-alert-info bl-alert-with-description&quot;, <br>        &quot;icon&quot;: &quot;blicon-alert-warning&quot;, <br>        &quot;name&quot;: &quot;提示信息&quot;, <br>        &quot;message&quot;: &quot;提示信息&quot;        <br>    }<br>}</div></pre>
+      <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“alert1”、“alert2”、“alert3”、“alert4”、与组件调用数组名称一致。<strong>class样式有四种，分别是bl-alert-error、bl-alert-success、bl-alert-warning、bl-alert-info，双行需要添加类bl-alert-with-description。icon样式有三种，分别是blicon-alert-error、blicon-alert-ok、blicon-alert-warning。</strong></p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

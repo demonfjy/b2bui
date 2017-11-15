@@ -1,0 +1,2 @@
+require(['../../radio/radio'], function() {
+});

@@ -1,0 +1,16 @@
+{
+	"style" : ["radio"],
+	"require": "js/assembly/file/radio",
+	"radio1": {
+		"class": "",
+		"id": "",
+		"name": "mc1",
+		"text": "11"
+	},
+	"radio2": {
+		"class": "",
+		"id": "",
+		"name": "mc1",
+		"text": "22"
+	}
+}

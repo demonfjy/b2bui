@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css"> {{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css"> {{/each}}
+<div class="site-content">
+    <h1 class="site-h1">弹框 show</h1>
+    <blockquote class="layui-elem-quote">弹框 show</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text" style="position:relative; height:350px;">{{#show1}} {{> show/show}} {{/show1}}</div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><span>{</span>{#if infoshow}}<br>    &lt;div data-reactroot=&quot;&quot; class=&quot;show-info <span>{</span>{class}}&quot;&gt;<br>        &lt;div class=&quot;bl-modal-mask1&quot;&gt;&lt;/div&gt;<br>        &lt;div tabindex=&quot;-1&quot; class=&quot;bl-modal-wrap &quot; role=&quot;dialog&quot;&gt;<br>            &lt;div role=&quot;document&quot; class=&quot;bl-modal bl-confirm bl-confirm-confirm {{style}}&quot;&gt;<br>            &lt;div class=&quot;bl-modal-content&quot;&gt;<br>                &lt;button aria-label=&quot;Close&quot; class=&quot;bl-modal-close&quot;&gt;&lt;span class=&quot;bl-modal-close-x&quot;&gt;&lt;/span&gt;&lt;/button&gt;<br>                &lt;div class=&quot;bl-modal-body&quot;&gt;<br>                    &lt;div class=&quot;bl-modal-body-wrapper&quot;&gt;<br>                        &lt;div class=&quot;bl-confirm-body&quot;&gt;<br>                            &lt;i class=&quot;blicon blicon-question-circle&quot;&gt;&lt;/i&gt;<br>                            &lt;span class=&quot;bl-modal-title&quot;&gt;<span>{</span>{name}}&lt;/span&gt;<br>                            &lt;div class=&quot;bl-main-modal-content&quot;&gt;<span>{</span>{text}}&lt;/div&gt;<br>                        &lt;/div&gt;<br>                        &lt;div class=&quot;bl-modal-btns&quot;&gt;<br>                            <span>{</span>{#each button}}<br>                                <span>{</span>{&gt; button/button}}<br>                            <span>{</span>{/each}}<br>                        &lt;/div&gt;<br>                    &lt;/div&gt;<br>                &lt;/div&gt;<br>            &lt;/div&gt;<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br><span>{</span>{/if}}</pre>
+        <p><span>{</span>{class}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{id}}定义按钮id。<span>{</span>{#if disabled}}判断时候可点击。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;tobe/components/show/show&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#show1}}
+    <span>{</span>{&gt; show/show}}
+<span>{</span>{/show1}}</div></pre>
+        <p><span>{</span>{#show1}}为json数据名称，可自行定义，<span>{</span>{&gt; show/show}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/show.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/show.js&quot;<br>    },<br>    &quot;show1&quot;: {<br>        &quot;infoshow&quot;:&quot;1&quot;,<br>        &quot;class&quot;:&quot;show-main&quot;,<br>        &quot;style&quot;:&quot;w415&quot;,<br>        &quot;name&quot;:&quot;确认要取消申请吗？&quot;,<br>        &quot;text&quot;:&quot;确定取消后该申请将会立即作废。&quot;,<br>        &quot;button&quot;:[{<br>            &quot;class&quot;:&quot;bl-btn-lg&quot;,<br>            &quot;id&quot;:&quot;cancel&quot;,<br>            &quot;name&quot;:&quot;取消&quot;<br>        },<br>        {<br>            &quot;class&quot;:&quot;bl-btn-primary bl-btn-lg&quot;,<br>            &quot;id&quot;:&quot;&quot;,<br>            &quot;name&quot;:&quot;确定&quot;<br>        }]<br>    }<br>}</div></pre>
+        <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“radio1”、“radio2”组件调用数组名称一致。</p>
+    </div>
+    <div class="site-text">
+    <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">js调用</h3><div>require(['show/show'], function() {});</div></pre>
+      <p>此处调用的是组件效果的js，如果不调用组件js不会产生效果。</p>
+    </div>
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>

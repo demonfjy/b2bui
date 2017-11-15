@@ -1,0 +1,8 @@
+{
+	"style" : ["footer"],
+	"require": "js/footer",
+	"footer1": {},
+	"footer2": {
+		"footerbottom" : "1"
+	}
+}

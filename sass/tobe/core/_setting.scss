@@ -1,0 +1,381 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// setting scss
+//-----------------------------------------------------
+
+
+// colors
+$grey-1: #fbfbfb;  
+$grey-2: #f7f7f7;  
+$grey-3: #d9d9d9;  
+$grey-4: #cccccc;
+$grey-5: #999999;                   
+$grey-6: #666666;  
+$grey-7: #333333;
+
+$blue-base: #108EE9;
+$blue-1: mix($blue-base,#ffffff,10%);  
+$blue-2: mix($blue-base,#ffffff,25%);  
+$blue-3: mix($blue-base,#ffffff,45%);  
+$blue-4: mix($blue-base,#ffffff,70.5%);
+$blue-5: $blue-base;                   
+$blue-6: mix($blue-base,#000000,94%);  
+$blue-7: mix($blue-base,#000000,87%);  
+$blue-8: mix($blue-base,#000000,80%);  
+$blue-9: mix($blue-base,#000000,74%);  
+$blue-10: mix($blue-base,#000000,67%); 
+
+$purple-base: #4b4b64;
+$purple-1: mix($purple-base,#ffffff,10%);  
+$purple-2: mix($purple-base,#ffffff,25%);  
+$purple-3: mix($purple-base,#ffffff,45%);  
+$purple-4: mix($purple-base,#ffffff,70.5%);
+$purple-5: $purple-base;                   
+$purple-6: mix($purple-base,#000000,94%);  
+$purple-7: mix($purple-base,#000000,87%);  
+$purple-8: mix($purple-base,#000000,80%);  
+$purple-9: mix($purple-base,#000000,74%);  
+$purple-10: mix($purple-base,#000000,67%); 
+
+$cyan-base: #3db8c1;
+$cyan-1: mix($cyan-base,#ffffff,10%);  
+$cyan-2: mix($cyan-base,#ffffff,25%);  
+$cyan-3: mix($cyan-base,#ffffff,45%);  
+$cyan-4: mix($cyan-base,#ffffff,70.5%);
+$cyan-5: $cyan-base;                   
+$cyan-6: mix($cyan-base,#000000,94%);  
+$cyan-7: mix($cyan-base,#000000,87%);  
+$cyan-8: mix($cyan-base,#000000,80%);  
+$cyan-9: mix($cyan-base,#000000,74%);  
+$cyan-10: mix($cyan-base,#000000,67%); 
+
+$green-base: #00A699;
+$green-1: mix($green-base,#ffffff,10%);  
+$green-2: mix($green-base,#ffffff,25%);  
+$green-3: mix($green-base,#ffffff,45%);  
+$green-4: mix($green-base,#ffffff,70.5%);
+$green-5: $green-base;                   
+$green-6: mix($green-base,#000000,94%);  
+$green-7: mix($green-base,#000000,87%);  
+$green-8: mix($green-base,#000000,80%);  
+$green-9: mix($green-base,#000000,74%);  
+$green-10: mix($green-base,#000000,67%); 
+
+$pink-base: #f7629e;
+$pink-1: mix($pink-base,#ffffff,10%);  
+$pink-2: mix($pink-base,#ffffff,25%);  
+$pink-3: mix($pink-base,#ffffff,45%);  
+$pink-4: mix($pink-base,#ffffff,70.5%);
+$pink-5: $pink-base;                   
+$pink-6: mix($pink-base,#000000,94%);  
+$pink-7: mix($pink-base,#000000,87%);  
+$pink-8: mix($pink-base,#000000,80%);  
+$pink-9: mix($pink-base,#000000,74%);  
+$pink-10: mix($pink-base,#000000,67%); 
+
+$red-base: #F76260;
+$red-1: mix($red-base,#ffffff,10%);
+$red-2: mix($red-base,#ffffff,25%);
+$red-3: mix($red-base,#ffffff,45%);
+$red-4: mix($red-base,#ffffff,70.5%);
+$red-5: $red-base;
+$red-6: mix($red-base,#000000,94%);
+$red-7: mix($red-base,#000000,87%);
+$red-8: mix($red-base,#000000,80%);
+$red-9: mix($red-base,#000000,74%);
+$red-10: mix($red-base,#000000,67%);
+
+$orange-base: #F68C6D;
+$orange-1: mix($orange-base,#ffffff,10%);  
+$orange-2: mix($orange-base,#ffffff,25%);  
+$orange-3: mix($orange-base,#ffffff,45%);  
+$orange-4: mix($orange-base,#ffffff,70.5%);
+$orange-5: $orange-base;                   
+$orange-6: mix($orange-base,#000000,94%);  
+$orange-7: mix($orange-base,#000000,87%);  
+$orange-8: mix($orange-base,#000000,80%);  
+$orange-9: mix($orange-base,#000000,74%);  
+$orange-10: mix($orange-base,#000000,67%); 
+
+$yellow-base: #FFAA00;
+$yellow-1: mix($yellow-base,#ffffff,10%);  
+$yellow-2: mix($yellow-base,#ffffff,25%);  
+$yellow-3: mix($yellow-base,#ffffff,45%);  
+$yellow-4: mix($yellow-base,#ffffff,70.5%);
+$yellow-5: $yellow-base;                   
+$yellow-6: mix($yellow-base,#000000,94%);  
+$yellow-7: mix($yellow-base,#000000,87%);  
+$yellow-8: mix($yellow-base,#000000,80%);  
+$yellow-9: mix($yellow-base,#000000,74%);  
+$yellow-10: mix($yellow-base,#000000,67%); 
+
+// Prefix
+$bl-prefix             : bl;
+
+// Color
+$primary-color          : $purple-5;
+$info-color             : $blue-6;
+$success-color          : $green-6;
+$error-color            : $red-6;
+$highlight-color        : $red-6;
+$warning-color          : $yellow-6;
+$normal-color           : #d9d9d9;
+
+$primary-1: $primary-color * 0.2;  // replace tint($primary-color, 90%)
+$primary-2: $primary-color * 0.4;  // replace tint($primary-color, 80%)
+$primary-3: $primary-color * 0.5;
+$primary-4: $primary-color * 0.6;
+$primary-5: $primary-color * 0.8;  // replace tint($primary-color, 20%)
+$primary-6: $primary-color;                                 // don't use, use $primary-color
+$primary-7: $primary-color * 1.2;  // replace shade($primary-color, 5%)
+$primary-8: $primary-color * 1.4;
+$primary-9: $primary-color * 1.6;
+$primary-10: $primary-color * 1.8;
+
+// ------ Base & Require ------
+$body-background        : #fff;
+$component-background   : #fff;
+$font-family            :  -apple-system , "PingFang SC",  "Microsoft YaHei", Arial, sans-serif;
+$code-family            : Consolas, Menlo, Courier, monospace;
+$heading-color          : $grey-7;
+$text-color             : $grey-6;
+$text-color-secondary   : $grey-5;
+$disabled-color         : $grey-4;
+$heading-color-dark     : $grey-7;
+$text-color-dark        : $grey-7;
+$text-color-secondary-dark: $grey-6;
+$disabled-color-dark    : $grey-5;
+$font-size-base         : 12px;
+$font-size-lg           : $font-size-base + 2px;
+$line-height-base       : 1.5;
+$border-radius-base     : 4px;
+$border-radius-sm       : 2px;
+
+// ICONFONT
+$iconfont-css-prefix    : blicon;
+$icon-url               : "";
+
+// LINK
+$link-color             : $blue-5;
+$link-hover-color       : $blue-4;
+$link-active-color      : $blue-6;
+$link-hover-decoration  : none;
+
+// Animation
+$ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Border color
+$border-color-base      : #d9d9d9;        // base border outline a component
+$border-color-split     : #e9e9e9;        // split border inside a component
+$border-width-base      : 1px;            // width of the border for a component
+$border-style-base      : solid;          // style of a components border
+
+// Outline
+$outline-blur-size      : 0;
+$outline-width          : 2px;
+$outline-color          : $blue-5;
+
+// Background color
+$background-color-base  : #f7f7f7;        // basic gray background
+
+// Shadow
+$shadow-color           : rgba(0, 0, 0, .2);
+$shadow-1-up            : 0 -1px 6px $shadow-color;
+$shadow-1-down          : 0 1px 6px $shadow-color;
+$shadow-1-left          : -1px 0 6px $shadow-color;
+$shadow-1-right         : 1px 0 6px $shadow-color;
+$shadow-2               : 0 2px 8px $shadow-color;
+$box-shadow-base        : $shadow-1-down;
+// Buttons
+$btn-font-weight        : 500;
+$btn-border-radius-base : $border-radius-base;
+$btn-border-radius-sm   : $border-radius-base;
+
+$btn-primary-color      : #fff;
+$btn-primary-bg         : $primary-color;
+
+$btn-default-color      : $text-color;
+$btn-default-bg         : #fff;
+$btn-default-border     : $border-color-base;
+
+$btn-danger-color      : #fff;
+$btn-danger-bg         : $red-6;
+
+$btn-disable-color      : $disabled-color;
+$btn-disable-bg         : $background-color-base;
+$btn-disable-border     : $border-color-base;
+
+$btn-padding-base       : 4px 15px;
+$btn-font-size-lg       : $font-size-lg;
+$btn-padding-lg         : 4px 15px 5px 15px;
+$btn-padding-sm         : 1px 7px;
+
+$btn-circle-size        : 28px;
+$btn-circle-size-lg     : 32px;
+$btn-circle-size-sm     : 22px;
+
+$btn-group-border       : $primary-7;
+
+// Media queries breakpoints
+// Extra small screen / phone
+$screen-xs              : 480px;
+$screen-xs-min          : $screen-xs;
+
+// Small screen / tablet
+$screen-sm              : 768px;
+$screen-sm-min          : $screen-sm;
+
+// Medium screen / desktop
+$screen-md              : 992px;
+$screen-md-min          : $screen-md;
+
+// Large screen / wide desktop
+$screen-lg              : 1200px;
+$screen-lg-min          : $screen-lg;
+
+// Extra Large screen / full hd
+$screen-xl              : 1600px;
+$screen-xl-min          : $screen-xl;
+
+// provide a maximum
+$screen-xs-max          : ($screen-sm-min - 1);
+$screen-sm-max          : ($screen-md-min - 1);
+$screen-md-max          : ($screen-lg-min - 1);
+$screen-lg-max          : ($screen-xl-min - 1);
+
+// Grid system
+$grid-columns           : 24;
+$grid-gutter-width      : 0;
+
+// Layout
+$layout-body-background      : #ececec;
+$layout-header-background    : #ffffff;
+$layout-header-height        : 64px;
+$layout-header-padding       : 0 16px;
+$layout-footer-padding       : 24px 50px;
+$layout-sider-background     : $primary-color;
+$layout-trigger-height       : 48px;
+$layout-zero-trigger-width   : 36px;
+$layout-zero-trigger-height  : 42px;
+
+// z-index list
+$zindex-affix           : 10;
+$zindex-back-top        : 10;
+$zindex-modal-mask      : 1000;
+$zindex-modal           : 1000;
+$zindex-notification    : 1010;
+$zindex-message         : 1010;
+$zindex-popover         : 1030;
+$zindex-picker          : 1050;
+$zindex-dropdown        : 1050;
+$zindex-tooltip         : 1060;
+
+// Animation
+$animation-duration-slow: .3s; // Modal
+$animation-duration-base: .2s;
+$animation-duration-fast: .1s; // Tooltip
+
+// Form
+// ---
+$label-required-color        : $highlight-color;
+$label-color                 : $text-color;
+$form-item-margin-bottom     : 24px;
+
+// Input
+// ---
+$input-height-base           : 28px;
+$input-height-lg             : 32px;
+$input-height-sm             : 22px;
+$input-padding-horizontal    : 7px;
+$input-padding-vertical-base : 4px;
+$input-padding-vertical-sm   : 1px;
+$input-padding-vertical-lg   : 6px;
+$input-placeholder-color     : #ccc;
+$input-color                 : $text-color;
+$input-border-color          : $border-color-base;
+$input-bg                    : #fff;
+$input-hover-border-color    : $blue-5;
+$input-disabled-bg           : $background-color-base;
+
+// Tooltip
+// ---
+//* Tooltip max width
+$tooltip-max-width: 250px;
+//** Tooltip text color
+$tooltip-color: #fff;
+//** Tooltip background color
+$tooltip-bg: rgba(64, 64, 64, .85);
+//** Tooltip arrow width
+$tooltip-arrow-width: 5px;
+//** Tooltip distance with trigger
+$tooltip-distance: $tooltip-arrow-width - 1 + 4;
+//** Tooltip arrow color
+$tooltip-arrow-color: $tooltip-bg;
+
+// Popover
+// ---
+//** Popover body background color
+$popover-bg: #fff;
+//** Popover maximum width
+$popover-min-width: 177px;
+//** Popover arrow width
+$popover-arrow-width: 4px;
+//** Popover arrow color
+$popover-arrow-color: $popover-bg;
+//** Popover outer arrow width
+$popover-arrow-outer-width: ($popover-arrow-width + 1);
+//** Popover outer arrow color
+$popover-arrow-outer-color: fadeout($border-color-base, 30%);
+
+// Progress
+// --
+$process-default-color: $primary-color;
+
+// Menu
+// ---
+$menu-dark-bg: $layout-sider-background;
+$menu-dark-submenu-bg: #3B3B52;
+
+// Spin
+// ---
+$spin-dot-size-sm: 14px;
+$spin-dot-size: 20px;
+$spin-dot-size-lg: 32px;
+
+// TimePicker
+// ---
+$time-picker-panel-column-width: 56px;
+$time-picker-panel-width: $time-picker-panel-column-width * 3;
+
+// Carousel
+// ---
+$carousel-dot-width: 16px;
+$carousel-dot-height: 3px;
+$carousel-dot-active-width: 24px;
+
+// Badge
+// ---
+$badge-height: 20px;
+$badge-dot-size: 8px;
+
+// Rate
+// ---
+$rate-star-color: #f5a623;
+$rate-star-bg: #e9e9e9;
+
+// Card
+// ---
+$card-head-height: 48px;
+$card-head-color: $heading-color;
+$card-head-background: $component-background;

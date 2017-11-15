@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="../../css/frameright.css"> {{#each style}}
+<link rel="stylesheet" type="text/css" href="../../css/assembly/file/{{ this }}.css"> {{/each}}
+<div class="site-content">
+  <h1 class="site-h1">表格 table</h1>
+    <blockquote class="layui-elem-quote">
+        table 表格</blockquote>
+    <div class="site-title">
+        <fieldset>
+            <legend><a name="nav">项目结构</a></legend>
+        </fieldset>
+    </div>
+    <div class="site-text">{{#table1}} {{> table/table}} {{/table1}}</div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构</h3><div>&lt;div class=&quot;bl-table <span>{</span>{style}}&quot;&gt;<br>    &lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;<br>        &lt;tr&gt;<br>            <span>{</span>{#each th}}<br>                &lt;th width=&quot;<span>{</span>{width}}&quot; align=&quot;<span>{</span>{align}}&quot;&gt;{<span>{</span>{text}}}&lt;/th&gt;<br>            <span>{</span>{/each}}<br>        &lt;/tr&gt;<br>        <span>{</span>{#each tr}}<br>            &lt;tr&gt;<br>                <span>{</span>{#each td}}<br>                    &lt;td align=&quot;<span>{</span>{align}}&quot;&gt;{<span>{</span>{text}}}&lt;/td&gt;<br>                <span>{</span>{/each}}<br>            &lt;/tr&gt;<br>        <span>{</span>{/each}}<br>    &lt;/table&gt;<br>&lt;/div&gt;</div></pre>
+        <p><span>{</span>{style}}此处为json数据，可通过json自行定义class。例如，我需要分页向右移动10像素，可通过此处类名修改。<span>{</span>{width}}为宽度，<span>{</span>{align}}为提示，{<span>{</span>{text}}}为字符串数据。<span>{</span>{#each th}}遍历循环标题，<span>{</span>{#each tr}}遍历循环表格行数。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件样式调用（sass文件或css文件）</h3><div>@import &quot;tobe/components/table/table&quot;;</div></pre>
+        <p>这是组件所需调用的组件样式。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">组件结构调用</h3><div><span>{</span>{#table1}}
+    <span>{</span>{&gt; table/table}}
+<span>{</span>{/table1}}</div></pre>
+        <p><span>{</span>{#table1}}为json数据名称，可自行定义，<span>{</span>{&gt; table/table}}为组件在项目中的位置。</p>
+    </div>
+    <div class="site-text">
+        <pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">json数据结构</h3><div>{
+    &quot;gl&quot;:{<br>        &quot;title&quot;: &quot;网页标题&quot;,<br>        &quot;styles&quot;: [&quot;css/table.css&quot;],<br>        &quot;scripts&quot;: [&quot;http://k10.iblimg.com/resources/lib/jquery-1.8.2.js&quot;],<br>        &quot;require&quot;: &quot;js/table.js&quot;<br>    },<br>    &quot;table1&quot; : {<br>        &quot;style&quot; : &quot;aaa&quot;,<br>        &quot;th&quot; : [{<br>            &quot;width&quot; : &quot;&quot;,<br>            &quot;align&quot; : &quot;&quot;,<br>            &quot;text&quot; : &quot;标题1&quot;<br>        },<br>        {<br>            &quot;width&quot; : &quot;&quot;,<br>            &quot;align&quot; : &quot;&quot;,<br>            &quot;text&quot; : &quot;标题2&quot;<br>        },<br>        {<br>            &quot;width&quot; : &quot;&quot;,<br>            &quot;align&quot; : &quot;&quot;,<br>            &quot;text&quot; : &quot;标题3&quot;<br>        },<br>        {<br>            &quot;width&quot; : &quot;&quot;,<br>            &quot;align&quot; : &quot;&quot;,<br>            &quot;text&quot; : &quot;标题4&quot;<br>        }],<br>        &quot;tr&quot;: [{<br>            &quot;td&quot; : [{<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;1&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;1&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;1&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;1&quot;<br>            }]<br>        },<br>        {<br>            &quot;td&quot; : [{<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;2&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;2&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;2&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;2&quot;<br>            }]<br>        },<br>        {<br>            &quot;td&quot; : [{<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;3&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;3&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;3&quot;<br>            },<br>            {<br>                &quot;align&quot; : &quot;center&quot;,<br>                &quot;text&quot; : &quot;3&quot;<br>            }]<br>        }]<br>    }<br>}</div></pre>
+        <p>“style”值为组件样式表名称，如页面有多个不同组件，此处可继承多个组件样式表。例如：页面有按钮组件，此处为&quot;style&quot; : [&quot;page&quot;,&quot;button&quot;,&quot;...&quot;]。“script”为js组件库，或其他js。“require”为此页面 js（自行编写）。“table1”组件调用数组名称一致。</p>
+    </div>
+    
+    <div class="layui-elem-quote">
+        <p>b2b - 用心与你沟通</p>
+    </div>
+</div>
+<script src="http://k10.iblimg.com/resources/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" data-main="../../{{require}}" src="../../js/require.min.js"></script>
